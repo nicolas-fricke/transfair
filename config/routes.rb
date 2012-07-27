@@ -1,4 +1,20 @@
 Transfair::Application.routes.draw do
+  resources :service_partners
+
+  resources :educations
+
+  resources :fair_wages
+
+  resources :countries
+
+  resources :languages
+
+  resources :jobs
+
+  resources :job_statuses
+
+  resources :job_types
+
   resources :clients
 
   # The priority is based upon order of creation:

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @fair_wage.date %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @fair_wage.amount %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @fair_wage.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_fair_wage_path(@fair_wage) %> |
+<%= link_to 'Back', fair_wages_path %>
