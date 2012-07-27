@@ -24,6 +24,9 @@ end
 
 gem 'jquery-rails'
 
+# Authentification
+gem 'devise'
+
 # Bootstrap CSS
 gem 'less-rails-bootstrap'
 
