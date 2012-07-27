@@ -1,0 +1,53 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :client %><br />
+    <%= f.text_field :client %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline_client %><br />
+    <%= f.datetime_select :deadline_client %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline_intern %><br />
+    <%= f.datetime_select :deadline_intern %>
+  </div>
+  <div class="field">
+    <%= f.label :job_type %><br />
+    <%= f.text_field :job_type %>
+  </div>
+  <div class="field">
+    <%= f.label :job_status %><br />
+    <%= f.text_field :job_status %>
+  </div>
+  <div class="field">
+    <%= f.label :client_paid %><br />
+    <%= f.check_box :client_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :rating_text %><br />
+    <%= f.text_area :rating_text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

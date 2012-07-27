@@ -1,0 +1,47 @@
+<h1>Listing service_partners</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email</th>
+    <th>Birth year</th>
+    <th>Phone number</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Is urban</th>
+    <th>Education</th>
+    <th>Education background</th>
+    <th>Work experience</th>
+    <th>Internet access</th>
+    <th>Internet use</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @service_partners.each do |service_partner| %>
+  <tr>
+    <td><%= service_partner.name %></td>
+    <td><%= service_partner.surname %></td>
+    <td><%= service_partner.email %></td>
+    <td><%= service_partner.birth_year %></td>
+    <td><%= service_partner.phone_number %></td>
+    <td><%= service_partner.country %></td>
+    <td><%= service_partner.city %></td>
+    <td><%= service_partner.is_urban %></td>
+    <td><%= service_partner.education %></td>
+    <td><%= service_partner.education_background %></td>
+    <td><%= service_partner.work_experience %></td>
+    <td><%= service_partner.internet_access %></td>
+    <td><%= service_partner.internet_use %></td>
+    <td><%= link_to 'Show', service_partner %></td>
+    <td><%= link_to 'Edit', edit_service_partner_path(service_partner) %></td>
+    <td><%= link_to 'Destroy', service_partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Service partner', new_service_partner_path %>
