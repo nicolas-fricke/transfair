@@ -1,0 +1,69 @@
+<%= form_for(@service_partner) do |f| %>
+  <% if @service_partner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service_partner.errors.count, "error") %> prohibited this service_partner from being saved:</h2>
+
+      <ul>
+      <% @service_partner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :birth_year %><br />
+    <%= f.number_field :birth_year %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :is_urban %><br />
+    <%= f.check_box :is_urban %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br />
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :education_background %><br />
+    <%= f.text_area :education_background %>
+  </div>
+  <div class="field">
+    <%= f.label :work_experience %><br />
+    <%= f.text_area :work_experience %>
+  </div>
+  <div class="field">
+    <%= f.label :internet_access %><br />
+    <%= f.text_area :internet_access %>
+  </div>
+  <div class="field">
+    <%= f.label :internet_use %><br />
+    <%= f.text_area :internet_use %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

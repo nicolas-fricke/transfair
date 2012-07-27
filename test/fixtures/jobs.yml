@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  client: 
+  deadline_client: 2012-07-27 19:39:15
+  deadline_intern: 2012-07-27 19:39:15
+  job_type: 
+  job_status: 
+  client_paid: false
+  rating: 1
+  rating_text: MyText
+
+two:
+  name: MyString
+  client: 
+  deadline_client: 2012-07-27 19:39:15
+  deadline_intern: 2012-07-27 19:39:15
+  job_type: 
+  job_status: 
+  client_paid: false
+  rating: 1
+  rating_text: MyText

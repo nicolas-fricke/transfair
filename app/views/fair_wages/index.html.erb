@@ -1,0 +1,27 @@
+<h1>Listing fair_wages</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fair_wages.each do |fair_wage| %>
+  <tr>
+    <td><%= fair_wage.date %></td>
+    <td><%= fair_wage.amount %></td>
+    <td><%= fair_wage.country %></td>
+    <td><%= link_to 'Show', fair_wage %></td>
+    <td><%= link_to 'Edit', edit_fair_wage_path(fair_wage) %></td>
+    <td><%= link_to 'Destroy', fair_wage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fair wage', new_fair_wage_path %>
