@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(:version => 20120727203227) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
->>>>>>> 233268fa0552164202ee109bb1ef0915c473bb5d
   end
 
   create_table "service_partners", :force => true do |t|
