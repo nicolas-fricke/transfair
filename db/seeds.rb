@@ -8,7 +8,10 @@
 
 Client.delete_all
 Client.create([
-  {:company => 'Amnesty International', :email => 'info@amnesty.org', :name => 'Charlize', :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster'},
+  {:company => 'Amnesty International', :email => 'info@amnesty.org', :name => 'Charlize',
+   :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster'},
+  {:company => 'Welthungerhilfe', :email => 'mayer@welthunger.co', :name => 'Jochen',
+   :phone_number => '+49/0440/12341', :position => 'CEO', :surname => 'Mayer'},
 ])
 
 Country.delete_all
@@ -30,17 +33,17 @@ Education.create([
   {:name => 'other'},
 ])
 
-country1 = Country.new(:currency => 'CDF1', :name => 'Congo1')
-country1.save()
+#country1 = Country.new(:currency => 'CDF1', :name => 'Congo1')
+#country1.save()
 
 FairWage.delete_all
 FairWage.create([
-  {:country_id => Country.first, :amount => 10, :date => Date.today},
+  {:country => Country.first, :amount => 10, :date => Date.today},
 ])
 
 Job.delete_all
 Job.create([
-  {:client_id => 1, :client_paid => false, :deadline_client => DateTime.now + 2.days, :deadline_intern => DateTime.now, :name => 'Transcription of interview with Christopher Nolan', :rating => 4, :rating_text => 'good job man'},
+  {:client => Client.first, :client_paid => false, :deadline_client => DateTime.now + 2.days, :deadline_intern => DateTime.now, :name => 'Transcription of interview with Christopher Nolan', :rating => 4, :rating_text => 'good job man'},
 ])
 
 JobStatus.delete_all
@@ -80,6 +83,13 @@ Language.create([
 
 ServicePartner.delete_all
 ServicePartner.create([
-  {:birth_year => 1989, :city => 'Zomba', :education_background => '', :email => 'malawiguy@gmail.com', :internet_access => 'sometimes', :internet_use => 'often', :is_urban => true, :name => 'malawiguy', :phone_number => '123-123123', :surname => '', :work_experience => 'some'},
+  {:country => Country.find_by_name('Malawi'), :education => Education.first, :birth_year => 1989, :city => 'Zomba',
+   :education_background => '', :email => 'malawiguy@gmail.com', :internet_access => 'sometimes',
+   :internet_use => 'often', :is_urban => true, :name => 'malawiguy', :phone_number => '123-123123',
+   :surname => '', :work_experience => 'some'},
+  {:country => Country.find_by_name('Ghana'), :education => Education.find_by_name('middle school'), :birth_year => 1960, :city => 'Axim',
+   :education_background => 'have been to Europe for study 1 semester', :email => 'ghsh@blue.com', :internet_access => '',
+   :internet_use => 'often', :is_urban => true, :name => 'rasta', :phone_number => '123-5555123',
+   :surname => 'zasta', :work_experience => 'experience and hard worker'},
 ])
 
