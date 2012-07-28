@@ -20,15 +20,15 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  # Bootstrap CSS
+  gem 'less-rails-bootstrap'
 end
 
 gem 'jquery-rails'
 
 # Authentification
 gem 'devise'
-
-# Bootstrap CSS
-gem 'less-rails-bootstrap'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
