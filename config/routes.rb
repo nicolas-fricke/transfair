@@ -1,7 +1,7 @@
 Transfair::Application.routes.draw do
-  resources :service_partners
+  devise_for :users
 
-  resources :educations
+  resources :service_partners
 
   resources :fair_wages
 
@@ -66,7 +66,7 @@ Transfair::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'clients#index'
 
   # See how all your routes lay out with "rake routes"
 
