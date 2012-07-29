@@ -6,15 +6,14 @@
 <%= form_tag clients_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search name", :full_name => nil %>
   </p>
 <% end %>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:surname) %></th>
+      <th><%= model_class.human_attribute_name(:full_name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:phone_number) %></th>
       <th><%= model_class.human_attribute_name(:company) %></th>
@@ -24,15 +23,9 @@
   </thead>
   <tbody>
 
-
-
-
-
-
   <% @clients.each do |client| %>
       <tr>
-        <td><%= client.name %></td>
-        <td><%= client.surname %></td>
+        <td><%= client.full_name %></td>
         <td><%= client.email %></td>
         <td><%= client.phone_number %></td>
         <td><%= client.company %></td>
