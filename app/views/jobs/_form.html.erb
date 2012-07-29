@@ -14,43 +14,13 @@
   <div class="control-group">
     <%= f.label :deadline_client, :class => 'control-label' %>
     <div class="controls">
-      <%= f.datetime_select :deadline_client, :class => 'datetime_select' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :deadline_intern, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :deadline_intern, :class => 'datetime_select' %>
+      <%= f.date_select :deadline_client, :class => 'datetime_select' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :job_type_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :job_type_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :job_status_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :job_status_id, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :client_paid, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :client_paid, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :rating, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :rating, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :rating_text, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :rating_text, :class => 'text_area' %>
+      <%= select("job",:job_type_id, JobType.all.collect { |p| [ p.name , p.id ] },{:selected => @job_type_class_id}) %>
     </div>
   </div>
 
