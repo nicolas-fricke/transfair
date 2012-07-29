@@ -1,70 +1,45 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ServicePartner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @service_partner.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @service_partner.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
+  <dd><%= @service_partner.surname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @service_partner.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:birth_year) %>:</strong></dt>
+  <dd><%= @service_partner.birth_year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+  <dd><%= @service_partner.phone_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country_id) %>:</strong></dt>
+  <dd><%= @service_partner.country_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @service_partner.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_urban) %>:</strong></dt>
+  <dd><%= @service_partner.is_urban %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:education_id) %>:</strong></dt>
+  <dd><%= @service_partner.education_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:education_background) %>:</strong></dt>
+  <dd><%= @service_partner.education_background %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:work_experience) %>:</strong></dt>
+  <dd><%= @service_partner.work_experience %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:internet_access) %>:</strong></dt>
+  <dd><%= @service_partner.internet_access %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:internet_use) %>:</strong></dt>
+  <dd><%= @service_partner.internet_use %></dd>
+</dl>
 
-<p>
-  <b>Surname:</b>
-  <%= @service_partner.surname %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @service_partner.email %>
-</p>
-
-<p>
-  <b>Birth year:</b>
-  <%= @service_partner.birth_year %>
-</p>
-
-<p>
-  <b>Phone number:</b>
-  <%= @service_partner.phone_number %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @service_partner.country %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @service_partner.city %>
-</p>
-
-<p>
-  <b>Is urban:</b>
-  <%= @service_partner.is_urban %>
-</p>
-
-<p>
-  <b>Education:</b>
-  <%= @service_partner.education %>
-</p>
-
-<p>
-  <b>Education background:</b>
-  <%= @service_partner.education_background %>
-</p>
-
-<p>
-  <b>Work experience:</b>
-  <%= @service_partner.work_experience %>
-</p>
-
-<p>
-  <b>Internet access:</b>
-  <%= @service_partner.internet_access %>
-</p>
-
-<p>
-  <b>Internet use:</b>
-  <%= @service_partner.internet_use %>
-</p>
-
-
-<%= link_to 'Edit', edit_service_partner_path(@service_partner) %> |
-<%= link_to 'Back', service_partners_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              service_partner_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_service_partner_path(@service_partner), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              service_partner_path(@service_partner),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

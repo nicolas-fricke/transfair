@@ -1,69 +1,86 @@
-<%= form_for(@service_partner) do |f| %>
-  <% if @service_partner.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@service_partner.errors.count, "error") %> prohibited this service_partner from being saved:</h2>
-
-      <ul>
-      <% @service_partner.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @service_partner, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :surname, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :surname, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birth_year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :birth_year, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :country_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :country_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_urban, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :is_urban, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :education_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :education_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :education_background, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :education_background, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :work_experience, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :work_experience, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :internet_access, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :internet_access, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :internet_use, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :internet_use, :class => 'text_area' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_year %><br />
-    <%= f.number_field :birth_year %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :is_urban %><br />
-    <%= f.check_box :is_urban %>
-  </div>
-  <div class="field">
-    <%= f.label :education %><br />
-    <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    <%= f.label :education_background %><br />
-    <%= f.text_area :education_background %>
-  </div>
-  <div class="field">
-    <%= f.label :work_experience %><br />
-    <%= f.text_area :work_experience %>
-  </div>
-  <div class="field">
-    <%= f.label :internet_access %><br />
-    <%= f.text_area :internet_access %>
-  </div>
-  <div class="field">
-    <%= f.label :internet_use %><br />
-    <%= f.text_area :internet_use %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                service_partner_path, :class => 'btn' %>
   </div>
 <% end %>
