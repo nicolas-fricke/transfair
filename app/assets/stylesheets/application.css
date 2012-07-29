@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+
+.container li
+{
+  float: left;
+  padding-right: 32px;
+}
+
+.container ul
+{
+    list-style-type: none;
+    font-size: 21px;
+}

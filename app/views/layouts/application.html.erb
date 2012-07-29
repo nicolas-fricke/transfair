@@ -18,16 +18,14 @@
 </head>
 <body>
 
-
-
-          <div class="main_menu">
-            <%= render_navigation :expand_all => true, :renderer => :bootstrap%>
-
-          </div>
-
-
-
-
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Transfair</a>
+        <%= render_navigation :expand_all => true, :renderer => :bootstrap%>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
       <!-- header goes here  -->
@@ -36,7 +34,6 @@
         <!-- hero goes here  -->
         <!-- navbar goes here  -->
         <div class="content">
-          <h1>Transfair</h1>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
             
