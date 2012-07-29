@@ -1,53 +1,62 @@
-<%= form_for(@job) do |f| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :client_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :deadline_client, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :deadline_client, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :deadline_intern, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :deadline_intern, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :job_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :job_type_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :job_status_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :job_status_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_paid, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :client_paid, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :rating, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating_text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :rating_text, :class => 'text_area' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :client %><br />
-    <%= f.text_field :client %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline_client %><br />
-    <%= f.datetime_select :deadline_client %>
-  </div>
-  <div class="field">
-    <%= f.label :deadline_intern %><br />
-    <%= f.datetime_select :deadline_intern %>
-  </div>
-  <div class="field">
-    <%= f.label :job_type %><br />
-    <%= f.text_field :job_type %>
-  </div>
-  <div class="field">
-    <%= f.label :job_status %><br />
-    <%= f.text_field :job_status %>
-  </div>
-  <div class="field">
-    <%= f.label :client_paid %><br />
-    <%= f.check_box :client_paid %>
-  </div>
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
-  </div>
-  <div class="field">
-    <%= f.label :rating_text %><br />
-    <%= f.text_area :rating_text %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                jobs_path, :class => 'btn' %>
   </div>
 <% end %>

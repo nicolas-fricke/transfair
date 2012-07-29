@@ -1,4 +1,4 @@
-<%- model_class = JobStatu -%>
+<%- model_class = Education -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
@@ -12,16 +12,16 @@
     </tr>
   </thead>
   <tbody>
-    <% @job_statuses.each do |job_status| %>
+    <% @educations.each do |education| %>
       <tr>
-        <td><%= link_to job_status.id, job_status_path(job_status) %></td>
-        <td><%= job_status.name %></td>
-        <td><%=l job_status.created_at %></td>
+        <td><%= link_to education.id, education_path(education) %></td>
+        <td><%= education.name %></td>
+        <td><%=l education.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_job_status_path(job_status), :class => 'btn btn-mini' %>
+                      edit_education_path(education), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      job_status_path(job_status),
+                      education_path(education),
                       :method => :delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
@@ -32,5 +32,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_job_status_path,
+            new_education_path,
             :class => 'btn btn-primary' %>
