@@ -5,13 +5,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:client_id) %></th>
       <th><%= model_class.human_attribute_name(:deadline_client) %></th>
       <th><%= model_class.human_attribute_name(:deadline_intern) %></th>
-      <th><%= model_class.human_attribute_name(:job_type_id) %></th>
-      <th><%= model_class.human_attribute_name(:job_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:job_type_name) %></th>
+      <th><%= model_class.human_attribute_name(:job_status_name) %></th>
       <th><%= model_class.human_attribute_name(:client_paid) %></th>
       <th><%= model_class.human_attribute_name(:rating) %></th>
       <th><%= model_class.human_attribute_name(:rating_text) %></th>
@@ -22,13 +21,12 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job) %></td>
-        <td><%= job.name %></td>
-        <td><%= job.client_id %></td>
-        <td><%= job.deadline_client %></td>
-        <td><%= job.deadline_intern %></td>
-        <td><%= job.job_type_id %></td>
-        <td><%= job.job_status_id %></td>
+        <td><%= link_to job.name, job_path(job) %></td>
+        <td><%= job.client.full_name %></td>
+        <td><%= job.deadline_client.to_date %></td>
+        <td><%= job.deadline_intern.to_date %></td>
+        <td><%= job.job_type.name %></td>
+        <td><%= job.job_status.name%></td>
         <td><%= job.client_paid %></td>
         <td><%= job.rating %></td>
         <td><%= job.rating_text %></td>

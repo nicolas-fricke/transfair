@@ -42,17 +42,6 @@ FairWage.create([
   {:country => Country.first, :amount => 12, :date => Date.today - 31.days},
 ])
 
-Job.delete_all
-Job.create([
-  {:client => Client.first, :job_status => JobStatus.first, :job_type => JobType.first,
-   :client_paid => false, :deadline_client => DateTime.now + 2.days,
-   :deadline_intern => DateTime.now + 4.days, :name => 'Transcription of interview with Christopher Nolan',
-   :rating => 4, :rating_text => 'good job man'},
-  {:client => Client.first, :job_status => JobStatus.first, :job_type => JobType.first,
-   :client_paid => false, :deadline_client => DateTime.now,
-   :deadline_intern => DateTime.now + 1.day, :name => 'Transcription of interview with Michelle Hunziker',
-   :rating => 2, :rating_text => 'a bit imprecise, but good all in all'},
-])
 
 JobStatus.delete_all
 JobStatus.create([
@@ -75,10 +64,23 @@ JobStatus.create([
 
 JobType.delete_all
 JobType.create([
-  {:name => 'transcription'},
-  {:name => 'translation'},
-  {:name => 'online research'},
+   {:name => 'transcription'},
+   {:name => 'translation'},
+   {:name => 'online research'},
 ])
+
+Job.delete_all
+Job.create([
+  {:client => Client.first, :job_status => JobStatus.first, :job_type => JobType.first,
+   :client_paid => false, :deadline_client => DateTime.now + 2.days,
+   :deadline_intern => DateTime.now + 4.days, :name => 'Transcription of interview with Christopher Nolan',
+   :rating => 4, :rating_text => 'good job man'},
+  {:client => Client.first, :job_status => JobStatus.first, :job_type => JobType.first,
+   :client_paid => false, :deadline_client => DateTime.now,
+   :deadline_intern => DateTime.now + 1.day, :name => 'Transcription of interview with Michelle Hunziker',
+   :rating => 2, :rating_text => 'a bit imprecise, but good all in all'},
+])
+
 
 Language.delete_all
 Language.create([

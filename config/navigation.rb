@@ -53,10 +53,11 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     primary.item :key_1, 'Clients', clients_path#, options
-    primary.item :key_1, 'Service Partners', service_partners_path do |sub_nav|
-      sub_nav.item :key_2_1, 'New', new_service_partner_path
-      sub_nav.item :key_2_1, 'Service Partners', service_partners_path
-    end
+    primary.item :key_1, 'Service Partners', service_partners_path
+    #primary.item :key_1, 'Service Partners', service_partners_path do |sub_nav|
+    #  sub_nav.item :key_2_1, 'New', new_service_partner_path
+    #  sub_nav.item :key_2_1, 'Service Partners', service_partners_path
+    #end
     primary.item :key_3, 'Jobs', jobs_path#, options
     primary.item :key_4, 'Languages', languages_path#, options
     primary.item :key_5, 'Settings'#, languages_path#, options
