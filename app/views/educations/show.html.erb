@@ -1,20 +1,20 @@
-<%- model_class = JobStatu -%>
+<%- model_class = Education -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @job_status.name %></dd>
+  <dd><%= @education.name %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              job_statuses_path, :class => 'btn'  %>
+              educations_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_job_status_path(@job_status), :class => 'btn' %>
+              edit_education_path(@education), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              job_status_path(@job_status),
+              education_path(@education),
               :method => 'delete',
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>

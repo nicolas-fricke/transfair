@@ -1,5 +1,6 @@
-<h2>New client</h2>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', clients_path %>
+<%- model_class = Client -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>

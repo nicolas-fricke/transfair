@@ -22,7 +22,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   # Bootstrap CSS
-  gem 'less-rails-bootstrap'
+  #gem 'less-rails-bootstrap'
+  gem 'twitter-bootstrap-rails'
+  gem 'simple-navigation'
+  gem 'simple-navigation-bootstrap'
 end
 
 gem 'jquery-rails'
