@@ -59,11 +59,11 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :servicePartners, 'Service Partners', service_partners_path
     primary.item :jobs, 'Jobs', jobs_path
     primary.item :languages, 'Languages', languages_path
-    primary.item :user, (user_signed_in? ? current_user.email : "Not logged in"), '#', :icon => "icon-user", :class => 'pull-right' do |sub_nav|
-      sub_nav.item :user_signIn, 'Sign in', new_user_session_path, :unless => lambda{user_signed_in?}
-      sub_nav.item :user_signUp, 'Register', new_user_registration_path, :unless => lambda{user_signed_in?}
-      sub_nav.item :user_signOut, 'Sign out', destroy_user_session_path, :method => :delete, :if => lambda{user_signed_in?}
-      sub_nav.item :user_settings, 'Settings', '#'
+    primary.item :user, (user_signed_in? ? current_user.email : "Not logged in"), '#', :icon => 'icon-user', :class => 'pull-right' do |user_nav|
+      user_nav.item :user_signIn, 'Sign in', new_user_session_path, :unless => lambda{user_signed_in?}
+      user_nav.item :user_signUp, 'Register', new_user_registration_path, :unless => lambda{user_signed_in?}
+      user_nav.item :user_signOut, 'Sign out', destroy_user_session_path, :method => :delete, :if => lambda{user_signed_in?}
+      user_nav.item :user_settings, 'Settings', '#'
     end
 
     # Add an item which has a sub navigation (same params, but with block)
