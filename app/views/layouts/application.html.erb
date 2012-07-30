@@ -30,8 +30,40 @@
           </a>
           <a class="brand" href="<%= root_path %>">Transfair</a>
           <div class="nav-collapse">
-            <%= render_navigation :expand_all => 'true'%>  
-          </div>
+            <%= render_navigation :expand_all => 'true'%>
+            
+            <div class="pull-left">
+              <ul class="nav">
+                <li class="dropdown">
+                  <% if user_signed_in? %>
+                    
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <b class="caret"></b>
+                      <%= current_user.email %> 
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
+                     </li>
+                   </ul>
+                 <% else %>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <b class="caret"></b>
+                      Not logged in
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <%= link_to 'sign in', new_user_session_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'register', new_user_registration_path, :method => :get %>
+                      </li>
+                    </ul>
+                 <% end %>
+               </li>
+             </ul>
+           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -51,13 +83,6 @@
           <%= yield %>
         </div>
       </div> <!-- /.span9 -->
-      <% if user_signed_in? %>
-        Signed in as <%= current_user.email %><br />
-        <%= button_to 'sign out', destroy_user_session_path, :method => :delete %>
-      <% else %>
-        You are currently not logged in. <br />
-        <%= button_to 'register', new_user_registration_path, :method => :get %> <%= button_to 'sign in', new_user_session_path %>
-      <% end %>
       <!-- sidebar goes here  -->
     </div> <!-- /.row -->
     <!-- footer goes here -->
