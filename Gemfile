@@ -26,7 +26,7 @@ group :assets do
   gem 'kaminari'
 
   # Bootstrap CSS
-  #gem 'less-rails-bootstrap'
+  # gem 'less-rails-bootstrap'
   gem 'twitter-bootstrap-rails'
   gem 'simple-navigation'
 end
