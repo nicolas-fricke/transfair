@@ -18,20 +18,21 @@
 </head>
 <body>
 
-  <div class="hero">
-    <strong> Help the world to help you </strong>
-  </div>
+  <div class="outer-container">
 
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="#">Transfair</a>
-        <%= render_navigation :expand_all => true, :renderer => :bootstrap%>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Transfair</a>
+          <%= render_navigation %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
+
+    <div class="hero">
+      <strong> Help the world to help you </strong>
+    </div>
       <!-- header goes here  -->
     <div class="row">
       <div class="span9">
