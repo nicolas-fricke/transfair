@@ -21,6 +21,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
+  # Table sorting, filtering and pagination
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+
   # Bootstrap CSS
   #gem 'less-rails-bootstrap'
   gem 'twitter-bootstrap-rails'

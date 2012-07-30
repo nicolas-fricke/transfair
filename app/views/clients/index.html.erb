@@ -10,7 +10,7 @@
   </p>
 <% end %>
 
-<table class="table table-striped">
+<table id="clients-table" class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:full_name) %></th>
@@ -18,7 +18,7 @@
       <th><%= model_class.human_attribute_name(:phone_number) %></th>
       <th><%= model_class.human_attribute_name(:company) %></th>
       <th><%= model_class.human_attribute_name(:position) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th class="nosort"><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
