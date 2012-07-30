@@ -7,7 +7,7 @@ SimpleNavigation::Configuration.run do |navigation|
   #navigation.renderer = :bootstrap#Your::Custom::Renderer
 
   # Specify the class that will be applied to active navigation items. Defaults to 'selected'
-  # navigation.selected_class = 'your_selected_class'
+  navigation.selected_class = 'active'
 
   # Specify the class that will be applied to the current leaf of
   # active navigation items. Defaults to 'simple-navigation-active-leaf'
@@ -53,8 +53,6 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
 
-    primary.dom_class = 'nav'
-      
     primary.item :key_1, 'Clients', clients_path#, options
     primary.item :key_1, 'Service Partners', service_partners_path
                                                 #primary.item :key_1, 'Service Partners', service_partners_path do |sub_nav|
@@ -81,7 +79,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
-    # primary.dom_class = 'menu-class'
+    primary.dom_class = 'nav'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false
