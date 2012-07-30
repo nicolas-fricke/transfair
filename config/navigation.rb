@@ -4,7 +4,9 @@ SimpleNavigation::Configuration.run do |navigation|
   # Specify a custom renderer if needed.
   # The default renderer is SimpleNavigation::Renderer::List which renders HTML lists.
   # The renderer can also be specified as option in the render_navigation call.
-  #navigation.renderer = :bootstrap#Your::Custom::Renderer
+  # Use Bootstrap renderer provided by the
+3  # simple-navigation-bootstrap gem
+  navigation.renderer = SimpleNavigation::Renderer::Bootstrap
 
   # Specify the class that will be applied to active navigation items. Defaults to 'selected'
   navigation.selected_class = 'active'
@@ -20,7 +22,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # You can override the default logic that is used to autogenerate the item ids.
   # To do this, define a Proc which takes the key of the current item as argument.
   # The example below would add a prefix to each key.
-  # navigation.id_generator = Proc.new {|key| "my-prefix-#{key}"}
+  navigation.id_generator = Proc.new {|key| "nav-#{key}"}
 
   # If you need to add custom html around item names, you can define a proc that will be called with the name you pass in to the navigation.
   # The example below shows how to wrap items spans.
@@ -53,16 +55,16 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
 
-    primary.item :key_1, 'Clients', clients_path#, options
-    primary.item :key_1, 'Service Partners', service_partners_path
-                                                #primary.item :key_1, 'Service Partners', service_partners_path do |sub_nav|
-                                                #  sub_nav.item :key_2_1, 'New', new_service_partner_path
-                                                #  sub_nav.item :key_2_1, 'Service Partners', service_partners_path
-                                                #end
-    primary.item :key_3, 'Jobs', jobs_path#, options
-    primary.item :key_4, 'Languages', languages_path#, options
-    primary.item :key_5, 'Settings', '#' #, languages_path#, options
-
+    primary.item :clients, 'Clients', clients_path
+    primary.item :servicePartners, 'Service Partners', service_partners_path
+    primary.item :jobs, 'Jobs', jobs_path
+    primary.item :languages, 'Languages', languages_path
+    primary.item :user, (user_signed_in? ? current_user.email : "Not logged in"), '#', :icon => "icon-user", :class => 'pull-right' do |sub_nav|
+      sub_nav.item :user_signIn, 'Sign in', new_user_session_path, :unless => lambda{user_signed_in?}
+      sub_nav.item :user_signUp, 'Register', new_user_registration_path, :unless => lambda{user_signed_in?}
+      sub_nav.item :user_signOut, 'Sign out', destroy_user_session_path, :method => :delete, :if => lambda{user_signed_in?}
+      sub_nav.item :user_settings, 'Settings', '#'
+    end
 
     # Add an item which has a sub navigation (same params, but with block)
     #    primary.item :key_2, 'name', url, options do |sub_nav|

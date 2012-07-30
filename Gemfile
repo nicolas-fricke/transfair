@@ -29,6 +29,7 @@ group :assets do
   # gem 'less-rails-bootstrap'
   gem 'twitter-bootstrap-rails'
   gem 'simple-navigation'
+  gem 'simple-navigation-bootstrap'
 end
 
 gem 'jquery-rails'
