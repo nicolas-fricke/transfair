@@ -3,7 +3,7 @@ body {
   background: url(bg.png);
 }
 
-.container {
+.outer-container {
   background: #fff;
   min-height: 100%;
   border: 12px solid #fff;
@@ -16,7 +16,7 @@ body {
   margin-bottom: 1em;
 }
 
-.brand {
+.brand_ {
   margin-bottom: 1em;
   display: block;
   text-indent: -999em;
