@@ -21,6 +21,10 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
+  # Table filtering
+  gem 'will_filter', "~> 3.1.0"
+  gem 'kaminari'
+
   # Bootstrap CSS
   #gem 'less-rails-bootstrap'
   gem 'twitter-bootstrap-rails'

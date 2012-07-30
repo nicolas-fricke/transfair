@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.search(params[:search])
+    @clients = Client.filter(:params => params)
 
     respond_to do |format|
       format.html # index.html.erb

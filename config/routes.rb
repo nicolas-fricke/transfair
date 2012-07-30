@@ -1,4 +1,6 @@
 Transfair::Application.routes.draw do
+  mount WillFilter::Engine => "/will_filter"
+    
   devise_for :users
 
   resources :service_partners
