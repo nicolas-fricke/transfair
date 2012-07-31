@@ -22,12 +22,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   # Table filtering
-  gem 'will_filter', "~> 3.1.0"
+  gem 'will_filter', '~> 3.1.0'
   gem 'kaminari'
 
   # Bootstrap CSS
   # gem 'less-rails-bootstrap'
   gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-datepicker-rails'
+  gem 'bootstrap-timepicker-rails', '~> 0.1.2'
   gem 'simple-navigation'
   gem 'simple-navigation-bootstrap'
 end
