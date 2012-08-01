@@ -32,7 +32,7 @@
   <div class="control-group">
     <%= f.label :country_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :country_id, :class => 'number_field' %>
+      <%= select("service_partner",:country_id, Country.all.collect { |p| [ p.name , p.id ] }, { :include_blank => true }) %>
     </div>
   </div>
   <div class="control-group">
