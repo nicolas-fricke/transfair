@@ -7,8 +7,12 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @job.name %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:client_id) %>:</strong></dt>
-  <dd><%= Client.find_by_id(@job.client_id).full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:client_name) %>:</strong></dt>
+  <% if @job.client == nil %>
+    <dd><%= '' %></dd>
+  <% else %>
+    <dd><%= @job.client.full_name %></dd>
+  <% end %>
 
   <dt><strong><%= model_class.human_attribute_name(:deadline_client) %>:</strong></dt>
   <dd><%= @job.deadline_client %></dd>
@@ -16,11 +20,19 @@
   <dt><strong><%= model_class.human_attribute_name(:deadline_intern) %>:</strong></dt>
   <dd><%= @job.deadline_intern %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:job_type_id) %>:</strong></dt>
-  <dd><%= JobType.find_by_id(@job.job_type_id).name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:job_type) %>:</strong></dt>
+  <% if @job.job_type == nil %>
+    <dd><%= '' %></dd>
+  <% else %>
+    <dd><%= @job.job_type.name %></dd>
+  <% end %>
 
-  <dt><strong><%= model_class.human_attribute_name(:job_status_id) %>:</strong></dt>
-  <dd><%= JobStatus.find_by_id(@job.job_status_id).name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:job_status) %>:</strong></dt>
+  <% if @job.job_type == nil %>
+    <dd><%= '' %></dd>
+  <% else %>
+    <dd><%= @job.job_status.name %></dd>
+  <% end %>
 
   <dt><strong><%= model_class.human_attribute_name(:client_paid) %>:</strong></dt>
   <dd><%= @job.client_paid %></dd>
