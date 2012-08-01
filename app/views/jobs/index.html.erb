@@ -30,14 +30,40 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= link_to job.name, job_path(job) %></td>
-        <td><%= job.client.full_name %></td>
-        <td><%= job.deadline_client.to_date %></td>
-        <td><%= job.deadline_intern.to_date %></td>
-        <td><%= job.job_type.name %></td>
-        <td><%= job.job_status.name%></td>
+
+        <% client = Client.find_by_id(job.client_id) %>
+        <% if client == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= client.full_name %></td>
+        <% end %>
+
+        <% if job.deadline_client == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= job.deadline_client.to_date %></td>
+        <% end %>
+
+        <% if job.deadline_intern == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= job.deadline_intern.to_date %></td>
+        <% end %>
+
+        <% if job.job_type == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= job.job_type.name %></td>
+        <% end %>
+
+        <% if job.job_status == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= job.job_status.name %></td>
+        <% end %>
+
         <td><%= job.client_paid %></td>
         <td><%= job.rating %></td>
-        <td><%= job.rating_text %></td>
         <td><%=l job.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

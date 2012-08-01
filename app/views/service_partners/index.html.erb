@@ -5,8 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:surname) %></th>
+      <th><%= model_class.human_attribute_name(:full_name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:birth_year) %></th>
       <th><%= model_class.human_attribute_name(:country_name) %></th>
@@ -18,11 +17,16 @@
   <tbody>
     <% @service_partners.each do |service_partner| %>
       <tr>
-        <td><%= link_to service_partner.name, service_partner_path(service_partner) %></td>
-        <td><%= service_partner.surname %></td>
+        <td><%= link_to service_partner.full_name, service_partner_path(service_partner) %></td>
         <td><%= service_partner.email %></td>
         <td><%= service_partner.birth_year %></td>
-        <td><%= service_partner.country.name %></td>
+
+        <% if service_partner.country == nil %>
+          <td><%= '' %></td>
+        <% else %>
+          <td><%= service_partner.country.name %></td>
+        <% end %>
+
         <td><%= service_partner.city %></td>
         <td><%= service_partner.internet_access %></td>
         <td>

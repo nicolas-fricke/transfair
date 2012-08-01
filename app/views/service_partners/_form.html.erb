@@ -50,7 +50,7 @@
   <div class="control-group">
     <%= f.label :education_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :education_id, :class => 'number_field' %>
+      <%= select("service_partner",:education_id, Education.all.collect { |p| [ p.name , p.id ] }, { :include_blank => true }) %>
     </div>
   </div>
   <div class="control-group">
