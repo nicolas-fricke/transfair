@@ -17,10 +17,10 @@
   <dd><%= @job.deadline_intern %></dd>
 
   <dt><strong><%= model_class.human_attribute_name(:job_type_id) %>:</strong></dt>
-  <dd><%= @job.job_type_id %></dd>
+  <dd><%= JobType.find_by_id(@job.job_type_id).name %></dd>
 
   <dt><strong><%= model_class.human_attribute_name(:job_status_id) %>:</strong></dt>
-  <dd><%= @job.job_status_id %></dd>
+  <dd><%= JobStatus.find_by_id(@job.job_status_id).name %></dd>
 
   <dt><strong><%= model_class.human_attribute_name(:client_paid) %>:</strong></dt>
   <dd><%= @job.client_paid %></dd>

@@ -15,23 +15,37 @@
   <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
   <dd><%= @service_partner.phone_number %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:country_name) %>:</strong></dt>
-  <dd><%= Country.find_by_id(@service_partner.country_id).name %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <% if (@service_partner.country == nil) %>
+    <dd><%= '' %></dd>
+  <% else %>
+    <dd><%= @service_partner.country.name %></dd>
+  <% end %>
+
 
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @service_partner.city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:is_urban) %>:</strong></dt>
   <dd><%= @service_partner.is_urban %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:education_id) %>:</strong></dt>
-  <dd><%= Education.find_by_id(@service_partner.education_id).name %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:education) %>:</strong></dt>
+  <% if (@service_partner.education == nil) %>
+    <dd><%= '' %></dd>
+  <% else %>
+    <dd><%= @service_partner.education.name %></dd>
+  <% end %>
 
   <dt><strong><%= model_class.human_attribute_name(:education_background) %>:</strong></dt>
   <dd><%= @service_partner.education_background %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:work_experience) %>:</strong></dt>
   <dd><%= @service_partner.work_experience %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:internet_access) %>:</strong></dt>
   <dd><%= @service_partner.internet_access %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:internet_use) %>:</strong></dt>
   <dd><%= @service_partner.internet_use %></dd>
 </dl>

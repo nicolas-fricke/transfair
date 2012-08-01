@@ -9,4 +9,12 @@ class ServicePartner < ActiveRecord::Base
     "#{self.name} #{self.surname}"
   end
 
+  def education
+    Education.find_by_id(self.education_id)
+  end
+
+  def country
+    Country.find_by_id(self.country_id)
+  end
+
 end
