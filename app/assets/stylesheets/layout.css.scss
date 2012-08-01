@@ -3,9 +3,13 @@ body {
   background: url(bg.png);
 }
 
+// Remove ugly will_filter styles
 .wf_grey_button {
   white-space:nowrap;
+  background: none;
 }
+
+// End will_filter removal
 
 .outer-container {
   background: #fff;
@@ -18,17 +22,6 @@ body {
 
 .header {
   margin-bottom: 1em;
-}
-
-.brand_ {
-  margin-bottom: 1em;
-  display: block;
-  text-indent: -999em;
-  overflow: hidden;
-  width: 192px;
-  height: 50px;
-  background-image: url(logo.png);
-  margin-left: 12px;
 }
 
 .hero {
