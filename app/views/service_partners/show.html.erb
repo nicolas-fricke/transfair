@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl> <%# dl-horizontal did not work fine with empty fields #%>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @service_partner.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
@@ -14,14 +14,18 @@
   <dd><%= @service_partner.birth_year %></dd>
   <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
   <dd><%= @service_partner.phone_number %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:country_id) %>:</strong></dt>
-  <dd><%= @service_partner.country_id %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:country_name) %>:</strong></dt>
+  <dd><%= Country.find_by_id(@service_partner.country_id).name %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @service_partner.city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:is_urban) %>:</strong></dt>
   <dd><%= @service_partner.is_urban %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:education_id) %>:</strong></dt>
-  <dd><%= @service_partner.education_id %></dd>
+  <dd><%= Education.find_by_id(@service_partner.education_id).name %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:education_background) %>:</strong></dt>
   <dd><%= @service_partner.education_background %></dd>
   <dt><strong><%= model_class.human_attribute_name(:work_experience) %>:</strong></dt>

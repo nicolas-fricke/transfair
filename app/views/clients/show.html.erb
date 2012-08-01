@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl> <%# dl-horizontal did not work fine with empty fields #%>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @client.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
@@ -16,6 +16,10 @@
   <dd><%= @client.company %></dd>
   <dt><strong><%= model_class.human_attribute_name(:position) %>:</strong></dt>
   <dd><%= @client.position %></dd>
+
+  <dt><strong> Jobs offered: </strong></dt>
+  <dd><%= Job.find_all_by_client_id(@client.id).count() %></dd>
+
 </dl>
 
 <div class="form-actions">
