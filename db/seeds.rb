@@ -38,8 +38,8 @@ Education.create([
 
 FairWage.delete_all
 FairWage.create([
-  {:country => Country.first, :amount => 10, :date => Date.today},
-  {:country => Country.first, :amount => 12, :date => Date.today - 31.days},
+  {:country_id => Country.first.id, :amount => 10, :date => Date.today},
+  {:country_id => Country.first.id, :amount => 12, :date => Date.today - 31.days},
 ])
 
 
@@ -93,13 +93,18 @@ Language.create([
 
 ServicePartner.delete_all
 ServicePartner.create([
-  {:country => Country.find_by_name('Malawi'), :education => Education.first, :birth_year => 1989, :city => 'Zomba',
+  {:country_id => Country.find_by_name('Malawi').id, :education_id => Education.first.id, :birth_year => 1989, :city => 'Zomba',
    :education_background => '', :email => 'malawiguy@gmail.com', :internet_access => 'sometimes',
    :internet_use => 'often', :is_urban => true, :name => 'malawiguy', :phone_number => '123-123123',
    :surname => '', :work_experience => 'some'},
-  {:country => Country.find_by_name('Ghana'), :education => Education.find_by_name('middle school'), :birth_year => 1960, :city => 'Axim',
+  {:country_id => Country.find_by_name('Ghana').id, :education_id => Education.find_by_name('middle school').id, :birth_year => 1960, :city => 'Axim',
    :education_background => 'have been to Europe for study 1 semester', :email => 'ghsh@blue.com', :internet_access => '',
    :internet_use => 'often', :is_urban => true, :name => 'rasta', :phone_number => '123-5555123',
    :surname => 'zasta', :work_experience => 'experience and hard worker'},
 ])
 
+User.delete_all
+User.create([
+  {:email => 'nicolas@fricke.de', :password => 'nicolas'},
+  {:email => 'markus@hinsche.de', :password => 'markus'},
+])
