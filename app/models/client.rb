@@ -1,6 +1,7 @@
 class Client < ActiveRecord::Base
-  attr_accessible :company, :email, :name, :phone_number, :position, :surname
-  belongs_to :country, :affiliation
+  attr_accessible :company, :email, :name, :phone_number, :position, :surname, :affiliation
+  belongs_to :country
+  belongs_to :affiliation
 
   def self.search(search)
     if search

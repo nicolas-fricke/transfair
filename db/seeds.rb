@@ -6,12 +6,17 @@
 #   cities = City.create([{ name => 'Chicago' }, { name => 'Copenhagen' }])
 #   Mayor.create(name => 'Emanuel', city => cities.first)
 
+Affiliation.delete_all
+Affiliation.create([
+    {:name => 'FB'},
+])
+
 Client.delete_all
 Client.create([
   {:company => 'Amnesty International', :email => 'info@amnesty.org', :name => 'Charlize',
-   :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster'},
+   :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster', :affiliation => Affiliation.first},
   {:company => 'Welthungerhilfe', :email => 'mayer@welthunger.co', :name => 'Jochen',
-   :phone_number => '+49/0440/12341', :position => 'CEO', :surname => 'Mayer'},
+   :phone_number => '+49/0440/12341', :position => 'CEO', :surname => 'Mayer', :affiliation => Affiliation.first},
 ])
 
 Country.delete_all
@@ -74,11 +79,11 @@ Job.create([
   {:client_id => Client.first.id, :job_status_id => JobStatus.first.id, :job_type_id => JobType.first.id,
    :client_paid => false, :deadline_client => DateTime.now + 2.days,
    :deadline_intern => DateTime.now + 4.days, :name => 'Transcription of interview with Christopher Nolan',
-   :rating => 4, :rating_text => 'good job man'},
+   :rating_client => 4, :rating_text => 'good job man'},
   {:client_id => Client.first.id, :job_status_id => JobStatus.first.id, :job_type_id => JobType.first.id,
    :client_paid => false, :deadline_client => DateTime.now,
    :deadline_intern => DateTime.now + 1.day, :name => 'Transcription of interview with Michelle Hunziker',
-   :rating => 2, :rating_text => 'a bit imprecise, but good all in all'},
+   :rating_client => 2, :rating_text => 'a bit imprecise, but good all in all'},
 ])
 
 
