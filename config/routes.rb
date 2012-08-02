@@ -1,4 +1,6 @@
 Transfair::Application.routes.draw do
+  resources :affiliations
+
   mount WillFilter::Engine => "/will_filter"
     
   devise_for :users, :path_names => {:sign_up => "register"}
