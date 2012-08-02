@@ -1,5 +1,6 @@
 class Country < ActiveRecord::Base
   attr_accessible :currency, :name
-  has_many :fair_wages, :clients
+  has_many :fair_wages
+  has_many :clients
 end
 

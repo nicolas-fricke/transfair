@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801152757) do
+ActiveRecord::Schema.define(:version => 20120802184253) do
+
+  create_table "affiliations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -20,8 +26,10 @@ ActiveRecord::Schema.define(:version => 20120801152757) do
     t.string   "phone_number"
     t.string   "company"
     t.string   "position"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "affiliation_id"
+    t.integer  "country_id"
   end
 
   create_table "countries", :force => true do |t|
@@ -78,6 +86,17 @@ ActiveRecord::Schema.define(:version => 20120801152757) do
   add_index "jobs", ["client_id"], :name => "index_jobs_on_client_id"
   add_index "jobs", ["job_status_id"], :name => "index_jobs_on_job_status_id"
   add_index "jobs", ["job_type_id"], :name => "index_jobs_on_job_type_id"
+
+  create_table "jobs_service_partners", :force => true do |t|
+    t.integer  "job_id"
+    t.integer  "service_partner_id"
+    t.boolean  "paid"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "jobs_service_partners", ["job_id"], :name => "index_jobs_service_partners_on_job_id"
+  add_index "jobs_service_partners", ["service_partner_id"], :name => "index_jobs_service_partners_on_service_partner_id"
 
   create_table "languages", :force => true do |t|
     t.string   "name"
