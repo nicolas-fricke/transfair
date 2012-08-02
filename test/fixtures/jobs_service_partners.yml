@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  job: 
+  service_partner: 
+  paid: false
+
+two:
+  job: 
+  service_partner: 
+  paid: false
