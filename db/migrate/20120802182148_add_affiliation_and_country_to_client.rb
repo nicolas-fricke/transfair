@@ -1,6 +1,6 @@
 class AddAffiliationAndCountryToClient < ActiveRecord::Migration
   def change
-    add_column :clients, :affiliation, :references
-    add_column :clients, :country, :references
+    add_column :clients, :affiliation_id, :integer
+    add_column :clients, :country_id, :integer
   end
 end
