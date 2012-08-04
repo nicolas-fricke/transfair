@@ -25,7 +25,8 @@
       <th><%= model_class.human_attribute_name(:job_type_name) %></th>
       <th><%= model_class.human_attribute_name(:job_status_name) %></th>
       <th><%= model_class.human_attribute_name(:client_paid) %></th>
-      <th><%= model_class.human_attribute_name(:rating) %></th>
+      <th><%= model_class.human_attribute_name(:rating_client) %></th>
+      <th><%= model_class.human_attribute_name(:rating_supervisor) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -66,7 +67,8 @@
         <% end %>
 
         <td><%= job.client_paid %></td>
-        <td><%= job.rating %></td>
+        <td><%= job.rating_client %></td>
+        <td><%= job.rating_supervisor %></td>
         <td><%=l job.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
