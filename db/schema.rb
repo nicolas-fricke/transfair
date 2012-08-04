@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802184253) do
+ActiveRecord::Schema.define(:version => 20120804093111) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(:version => 20120802184253) do
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
     t.decimal  "discount_price",    :precision => 10, :scale => 0
-    t.integer  "rating_superviser"
+    t.integer  "rating_supervisor"
   end
 
   add_index "jobs", ["client_id"], :name => "index_jobs_on_client_id"
