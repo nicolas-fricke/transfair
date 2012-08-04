@@ -28,7 +28,7 @@
   <% end %>
 
   <dt><strong><%= model_class.human_attribute_name(:job_status) %>:</strong></dt>
-  <% if @job.job_type == nil %>
+  <% if @job.job_status == nil %>
     <dd><%= '' %></dd>
   <% else %>
     <dd><%= @job.job_status.name %></dd>
