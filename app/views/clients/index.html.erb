@@ -26,7 +26,7 @@
   <% @clients.each do |client| %>
       <tr>
         <td><%= link_to client.full_name, client_path(client) %></td>
-        <td><%= client.email %></td>
+        <td><%= link_to client.email, "mailto:#{client.email}" %></td>
         <td><%= client.phone_number %></td>
         <td><%= client.company %></td>
         <td><%= client.position %></td>
