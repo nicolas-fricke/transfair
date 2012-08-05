@@ -17,12 +17,15 @@
       <%= f.text_field :email, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
-    <%= f.label :birth_year, :class => 'control-label' %>
+    <%= f.label :date_of_birth, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :birth_year, :class => 'number_field' %>
+      <%= f.text_field :date_of_birth, :class => 'datepicker' %>
+      <i class="icon-calendar" style="margin: -2px 0 0 -26px; pointer-events: none; position: relative;"></i>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :phone_number, :class => 'control-label' %>
     <div class="controls">
