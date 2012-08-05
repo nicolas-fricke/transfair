@@ -5,7 +5,8 @@ class Job < ActiveRecord::Base
   attr_accessible :client_paid, :name, :rating_client, :rating_text,
                   :client_id, :client, :job_type_id, :job_status_id
 
-  has_and_belongs_to_many :service_partners
+  has_many :employments
+  has_many :service_partners, :through => :employments
 
   def client
     Client.find_by_id(self.client_id)
