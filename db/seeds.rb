@@ -108,11 +108,10 @@ sp2 = ServicePartner.create(
   :surname => 'zasta', :work_experience => 'experience and hard worker')
 
 ServicePartner.create([
-
 ])
 
-JobsServicePartners.delete_all
-JobsServicePartners.create([
+Employment.delete_all
+Employment.create([
   {:service_partner => sp1, :job => Job.first, :paid => false},
   {:service_partner => sp2, :paid => false},
 ], :without_protection => true)
