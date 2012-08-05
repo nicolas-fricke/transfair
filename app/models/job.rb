@@ -3,9 +3,17 @@ class Job < ActiveRecord::Base
   belongs_to :job_type
   belongs_to :job_status
   attr_accessible :client_paid, :name, :rating_client, :rating_text,
-                  :job_type_id, :job_status_id
+                  :job_type_id, :job_status_id, :deadline_client
 
   has_many :employments
   has_many :service_partners, :through => :employments
+
+  #validates :client_id, :presence => true      #automatically set when new job
+  validates :deadline_client, :presence => true
+  #validates :job_status_id, :presence => true
+
+  def init
+    self.status ||= JobStatus.first
+  end
 
 end
