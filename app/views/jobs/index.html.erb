@@ -19,11 +19,12 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:client_id) %></th>
+      <th><%= model_class.human_attribute_name(:client) %></th>
+      <th><%= model_class.human_attribute_name(:service_partners) %></th>
       <th><%= model_class.human_attribute_name(:deadline_client) %></th>
       <th><%= model_class.human_attribute_name(:deadline_intern) %></th>
-      <th><%= model_class.human_attribute_name(:job_type_name) %></th>
-      <th><%= model_class.human_attribute_name(:job_status_name) %></th>
+      <th><%= model_class.human_attribute_name(:job_type) %></th>
+      <th><%= model_class.human_attribute_name(:job_status) %></th>
       <th><%= model_class.human_attribute_name(:client_paid) %></th>
       <th><%= model_class.human_attribute_name(:rating_client) %></th>
       <th><%= model_class.human_attribute_name(:rating_supervisor) %></th>
@@ -40,6 +41,15 @@
           <td><%= '' %></td>
         <% else %>
           <td><%= job.client.full_name %></td>
+        <% end %>
+
+
+        <% if job.service_partners.count == 0 %>
+          <td><%= 'none' %></td>
+        <% elsif job.service_partners.count == 1 %>
+          <td><%= job.service_partners.first.full_name %></td>
+        <% else %>
+          <td><%= 'multiple' %></td>
         <% end %>
 
         <% if job.deadline_client == nil %>

@@ -21,7 +21,7 @@
   </thead>
   <tbody>
     <% @service_partners.each do |service_partner| %>
-      <tr>
+    <tr>
         <td><%= link_to service_partner.full_name, service_partner_path(service_partner) %></td>
         <td><%= service_partner.email %></td>
         <td><%= service_partner.date_of_birth %></td>

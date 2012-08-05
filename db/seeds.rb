@@ -86,7 +86,6 @@ Job.create([
    :rating_client => 2, :rating_text => 'a bit imprecise, but good all in all'},
 ], :without_protection => true)
 
-
 Language.delete_all
 Language.create([
   {:name => 'German'},
@@ -97,16 +96,26 @@ Language.create([
 ])
 
 ServicePartner.delete_all
+sp1 = ServicePartner.create(
+  :country_id => Country.find_by_name('Malawi').id, :education_id => Education.first.id, :date_of_birth => Date.new(1989,6,1), :city => 'Zomba',
+  :education_background => '', :email => 'malawiguy@gmail.com', :internet_access => 'sometimes',
+  :internet_use => 'often', :is_urban => true, :name => 'malawiguy', :phone_number => '123-123123',
+  :surname => '', :work_experience => 'some')
+sp2 = ServicePartner.create(
+  :country_id => Country.find_by_name('Ghana').id, :education_id => Education.find_by_name('middle school').id, :date_of_birth => Date.new(1989,6,1), :city => 'Axim',
+  :education_background => 'have been to Europe for study 1 semester', :email => 'ghsh@blue.com', :internet_access => '',
+  :internet_use => 'often', :is_urban => true, :name => 'rasta', :phone_number => '123-5555123',
+  :surname => 'zasta', :work_experience => 'experience and hard worker')
+
 ServicePartner.create([
-  {:country_id => Country.find_by_name('Malawi').id, :education_id => Education.first.id, :date_of_birth => Date.new(1989,6,1), :city => 'Zomba',
-   :education_background => '', :email => 'malawiguy@gmail.com', :internet_access => 'sometimes',
-   :internet_use => 'often', :is_urban => true, :name => 'malawiguy', :phone_number => '123-123123',
-   :surname => '', :work_experience => 'some'},
-  {:country_id => Country.find_by_name('Ghana').id, :education_id => Education.find_by_name('middle school').id, :date_of_birth => Date.new(1989,6,1), :city => 'Axim',
-   :education_background => 'have been to Europe for study 1 semester', :email => 'ghsh@blue.com', :internet_access => '',
-   :internet_use => 'often', :is_urban => true, :name => 'rasta', :phone_number => '123-5555123',
-   :surname => 'zasta', :work_experience => 'experience and hard worker'},
+
 ])
+
+JobsServicePartners.delete_all
+JobsServicePartners.create([
+  {:service_partner => sp1, :job => Job.first, :paid => false},
+  {:service_partner => sp2, :paid => false},
+], :without_protection => true)
 
 User.delete_all
 User.create([
