@@ -17,6 +17,14 @@
       <%= f.text_field :email, :class => 'text_field' %>
     </div>
   </div>
+
+  <div class="control-group">
+    <%= f.label :country_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= select("client",:country_id, Country.all.collect { |p| [ p.name , p.id ] }, { :include_blank => true }) %>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :phone_number, :class => 'control-label' %>
     <div class="controls">
