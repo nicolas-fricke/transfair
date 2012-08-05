@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120804093111) do
+ActiveRecord::Schema.define(:version => 20120805142548) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20120804093111) do
     t.string   "name"
     t.string   "surname"
     t.string   "email"
-    t.integer  "birth_year"
     t.string   "phone_number"
     t.integer  "country_id"
     t.string   "city"
@@ -120,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20120804093111) do
     t.text     "internet_use"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+    t.date     "date_of_birth"
   end
 
   add_index "service_partners", ["country_id"], :name => "index_service_partners_on_country_id"
