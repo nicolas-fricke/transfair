@@ -84,7 +84,7 @@ Job.create([
    :client_paid => false, :deadline_client => DateTime.now,
    :deadline_intern => DateTime.now + 1.day, :name => 'Transcription of interview with Michelle Hunziker',
    :rating_client => 2, :rating_text => 'a bit imprecise, but good all in all'},
-])
+], :without_protection => true)
 
 
 Language.delete_all
