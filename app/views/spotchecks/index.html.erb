@@ -1,0 +1,29 @@
+<h1>Listing spotchecks</h1>
+
+<table>
+  <tr>
+    <th>Job</th>
+    <th>Service partner</th>
+    <th>Rating</th>
+    <th>Rating text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spotchecks.each do |spotcheck| %>
+  <tr>
+    <td><%= spotcheck.job_id %></td>
+    <td><%= spotcheck.service_partner_id %></td>
+    <td><%= spotcheck.rating %></td>
+    <td><%= spotcheck.rating_text %></td>
+    <td><%= link_to 'Show', spotcheck %></td>
+    <td><%= link_to 'Edit', edit_spotcheck_path(spotcheck) %></td>
+    <td><%= link_to 'Destroy', spotcheck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spotcheck', new_spotcheck_path %>

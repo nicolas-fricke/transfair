@@ -1,4 +1,8 @@
 Transfair::Application.routes.draw do
+  resources :spotchecks
+
+  resources :fields
+
   resources :affiliations
 
   mount WillFilter::Engine => "/will_filter"
