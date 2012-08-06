@@ -1,0 +1,85 @@
+<%= form_for(@transcription_information) do |f| %>
+  <% if @transcription_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transcription_information.errors.count, "error") %> prohibited this transcription_information from being saved:</h2>
+
+      <ul>
+      <% @transcription_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.time_select :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :starting_point %><br />
+    <%= f.time_select :starting_point %>
+  </div>
+  <div class="field">
+    <%= f.label :ending_point %><br />
+    <%= f.time_select :ending_point %>
+  </div>
+  <div class="field">
+    <%= f.label :is_detailed_transcription %><br />
+    <%= f.check_box :is_detailed_transcription %>
+  </div>
+  <div class="field">
+    <%= f.label :audio_quality %><br />
+    <%= f.number_field :audio_quality %>
+  </div>
+  <div class="field">
+    <%= f.label :speaker_accent %><br />
+    <%= f.number_field :speaker_accent %>
+  </div>
+  <div class="field">
+    <%= f.label :number_speaker %><br />
+    <%= f.number_field :number_speaker %>
+  </div>
+  <div class="field">
+    <%= f.label :is_content_focused %><br />
+    <%= f.check_box :is_content_focused %>
+  </div>
+  <div class="field">
+    <%= f.label :with_pause_interjection %><br />
+    <%= f.check_box :with_pause_interjection %>
+  </div>
+  <div class="field">
+    <%= f.label :with_emotion_interjection %><br />
+    <%= f.check_box :with_emotion_interjection %>
+  </div>
+  <div class="field">
+    <%= f.label :with_pause %><br />
+    <%= f.check_box :with_pause %>
+  </div>
+  <div class="field">
+    <%= f.label :with_interruption %><br />
+    <%= f.check_box :with_interruption %>
+  </div>
+  <div class="field">
+    <%= f.label :with_time_stamp %><br />
+    <%= f.check_box :with_time_stamp %>
+  </div>
+  <div class="field">
+    <%= f.label :field_id %><br />
+    <%= f.number_field :field_id %>
+  </div>
+  <div class="field">
+    <%= f.label :background_information %><br />
+    <%= f.text_area :background_information %>
+  </div>
+  <div class="field">
+    <%= f.label :recurring_denominations %><br />
+    <%= f.text_area :recurring_denominations %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

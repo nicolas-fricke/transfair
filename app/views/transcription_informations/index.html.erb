@@ -1,0 +1,55 @@
+<h1>Listing transcription_informations</h1>
+
+<table>
+  <tr>
+    <th>Duration</th>
+    <th>Category</th>
+    <th>Starting point</th>
+    <th>Ending point</th>
+    <th>Is detailed transcription</th>
+    <th>Audio quality</th>
+    <th>Speaker accent</th>
+    <th>Number speaker</th>
+    <th>Is content focused</th>
+    <th>With pause interjection</th>
+    <th>With emotion interjection</th>
+    <th>With pause</th>
+    <th>With interruption</th>
+    <th>With time stamp</th>
+    <th>Field</th>
+    <th>Background information</th>
+    <th>Recurring denominations</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transcription_informations.each do |transcription_information| %>
+    <tr>
+    <td><%= transcription_information.duration %></td>
+    <td><%= transcription_information.category_id %></td>
+    <td><%= transcription_information.starting_point %></td>
+    <td><%= transcription_information.ending_point %></td>
+    <td><%= transcription_information.is_detailed_transcription %></td>
+    <td><%= transcription_information.audio_quality %></td>
+    <td><%= transcription_information.speaker_accent %></td>
+    <td><%= transcription_information.number_speaker %></td>
+    <td><%= transcription_information.is_content_focused %></td>
+    <td><%= transcription_information.with_pause_interjection %></td>
+    <td><%= transcription_information.with_emotion_interjection %></td>
+    <td><%= transcription_information.with_pause %></td>
+    <td><%= transcription_information.with_interruption %></td>
+    <td><%= transcription_information.with_time_stamp %></td>
+    <td><%= transcription_information.field_id %></td>
+    <td><%= transcription_information.background_information %></td>
+    <td><%= transcription_information.recurring_denominations %></td>
+    <td><%= link_to 'Show', transcription_information %></td>
+    <td><%= link_to 'Edit', edit_transcription_information_path(transcription_information) %></td>
+    <td><%= link_to 'Destroy', transcription_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transcription information', new_transcription_information_path %>

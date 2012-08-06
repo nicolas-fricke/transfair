@@ -16,8 +16,8 @@ class Job < ActiveRecord::Base
   #validates :job_status_id, :presence => true
 
 
-  def init
-    self.status ||= JobStatus.first
-  end
+ # def init
+  #  self.status ||= JobStatus.first
+  #end
 
 end

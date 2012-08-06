@@ -11,9 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806220757) do
+ActiveRecord::Schema.define(:version => 20120806234837) do
 
   create_table "affiliations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -37,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20120806220757) do
     t.string   "currency"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "countries_transcription_information", :id => false, :force => true do |t|
+    t.integer "country_id"
+    t.integer "transcription_information_id"
+  end
+
+  create_table "countries_transcription_informations", :id => false, :force => true do |t|
+    t.integer "country_id"
+    t.integer "transcription_information_id"
   end
 
   create_table "educations", :force => true do |t|
@@ -91,10 +107,9 @@ ActiveRecord::Schema.define(:version => 20120806220757) do
     t.boolean  "client_paid"
     t.integer  "rating_client"
     t.text     "rating_text"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
-    t.decimal  "special_price",     :precision => 10, :scale => 0
-    t.integer  "rating_supervisor"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.decimal  "special_price",   :precision => 10, :scale => 0
     t.integer  "language_id"
   end
 
@@ -119,6 +134,14 @@ ActiveRecord::Schema.define(:version => 20120806220757) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "qualification_tests", :force => true do |t|
+    t.integer  "language_id"
+    t.string   "job_type_id"
+    t.integer  "result"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "service_partners", :force => true do |t|
     t.string   "name"
     t.string   "surname"
@@ -132,13 +155,49 @@ ActiveRecord::Schema.define(:version => 20120806220757) do
     t.text     "work_experience"
     t.text     "internet_access"
     t.text     "internet_use"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
     t.date     "date_of_birth"
+    t.integer  "education_field_id"
+    t.integer  "work_field_id"
+    t.integer  "affiliation_id"
+    t.decimal  "internet_price",       :precision => 10, :scale => 0
+    t.boolean  "active"
   end
 
   add_index "service_partners", ["country_id"], :name => "index_service_partners_on_country_id"
   add_index "service_partners", ["education_id"], :name => "index_service_partners_on_education_id"
+
+  create_table "spotchecks", :force => true do |t|
+    t.integer  "job_id"
+    t.integer  "service_partner_id"
+    t.integer  "rating"
+    t.text     "rating_text"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "transcription_informations", :force => true do |t|
+    t.time     "duration"
+    t.integer  "category_id"
+    t.time     "starting_point"
+    t.time     "ending_point"
+    t.boolean  "is_detailed_transcription"
+    t.integer  "audio_quality"
+    t.integer  "speaker_accent"
+    t.integer  "number_speaker"
+    t.boolean  "is_content_focused"
+    t.boolean  "with_pause_interjection"
+    t.boolean  "with_emotion_interjection"
+    t.boolean  "with_pause"
+    t.boolean  "with_interruption"
+    t.boolean  "with_time_stamp"
+    t.integer  "field_id"
+    t.text     "background_information"
+    t.text     "recurring_denominations"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -1,4 +1,6 @@
 Transfair::Application.routes.draw do
+  resources :transcription_informations
+
   resources :spotchecks
 
   resources :fields
