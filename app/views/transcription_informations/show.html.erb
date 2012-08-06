@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Duration:</b>
+  <%= @transcription_information.duration %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @transcription_information.category_id %>
+</p>
+
+<p>
+  <b>Starting point:</b>
+  <%= @transcription_information.starting_point %>
+</p>
+
+<p>
+  <b>Ending point:</b>
+  <%= @transcription_information.ending_point %>
+</p>
+
+<p>
+  <b>Is detailed transcription:</b>
+  <%= @transcription_information.is_detailed_transcription %>
+</p>
+
+<p>
+  <b>Audio quality:</b>
+  <%= @transcription_information.audio_quality %>
+</p>
+
+<p>
+  <b>Speaker accent:</b>
+  <%= @transcription_information.speaker_accent %>
+</p>
+
+<p>
+  <b>Number speaker:</b>
+  <%= @transcription_information.number_speaker %>
+</p>
+
+<p>
+  <b>Is content focused:</b>
+  <%= @transcription_information.is_content_focused %>
+</p>
+
+<p>
+  <b>With pause interjection:</b>
+  <%= @transcription_information.with_pause_interjection %>
+</p>
+
+<p>
+  <b>With emotion interjection:</b>
+  <%= @transcription_information.with_emotion_interjection %>
+</p>
+
+<p>
+  <b>With pause:</b>
+  <%= @transcription_information.with_pause %>
+</p>
+
+<p>
+  <b>With interruption:</b>
+  <%= @transcription_information.with_interruption %>
+</p>
+
+<p>
+  <b>With time stamp:</b>
+  <%= @transcription_information.with_time_stamp %>
+</p>
+
+<p>
+  <b>Field:</b>
+  <%= @transcription_information.field_id %>
+</p>
+
+<p>
+  <b>Background information:</b>
+  <%= @transcription_information.background_information %>
+</p>
+
+<p>
+  <b>Recurring denominations:</b>
+  <%= @transcription_information.recurring_denominations %>
+</p>
+
+
+<%= link_to 'Edit', edit_transcription_information_path(@transcription_information) %> |
+<%= link_to 'Back', transcription_informations_path %>

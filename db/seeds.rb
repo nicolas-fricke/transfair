@@ -11,14 +11,6 @@ Affiliation.create([
     {:name => 'FB'},
 ])
 
-Client.delete_all
-Client.create([
-  {:company => 'Amnesty International', :email => 'info@amnesty.org', :name => 'Charlize',
-   :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster', :affiliation => Affiliation.first},
-  {:company => 'Welthungerhilfe', :email => 'mayer@welthunger.co', :name => 'Jochen',
-   :phone_number => '+49/0440/12341', :position => 'CEO', :surname => 'Mayer', :affiliation => Affiliation.first},
-])
-
 Country.delete_all
 Country.create([
   {:currency => 'MWK', :name => 'Malawi'},
@@ -26,6 +18,16 @@ Country.create([
   {:currency => 'Z$', :name => 'Zimbabwe'},
   {:currency => 'CFA Franc', :name => 'Cameroon'},
   {:currency => 'CDF', :name => 'Congo'},
+])
+
+Client.delete_all
+Client.create([
+  {:company => 'Amnesty International', :email => 'info@amnesty.org', :name => 'Charlize',
+   :phone_number => '123-1221235', :position => 'accountant', :surname => 'Foster',
+   :country_id =>Country.first.id, :affiliation => Affiliation.first},
+  {:company => 'Welthungerhilfe', :email => 'mayer@welthunger.co', :name => 'Jochen',
+   :phone_number => '+49/0440/12341', :position => 'CEO', :surname => 'Mayer',
+   :country_id =>Country.first.id, :affiliation => Affiliation.first},
 ])
 
 Education.delete_all
@@ -74,6 +76,15 @@ JobType.create([
    {:name => 'online research'},
 ])
 
+Language.delete_all
+Language.create([
+  {:name => 'German'},
+  {:name => 'English'},
+  {:name => 'Spanish'},
+  {:name => 'French'},
+  {:name => 'Italian'},
+])
+
 Job.delete_all
 Job.create([
   {:client_id => Client.first.id, :job_status_id => JobStatus.first.id, :job_type_id => JobType.first.id,
@@ -85,15 +96,7 @@ Job.create([
    :deadline_intern => DateTime.now + 1.day, :name => 'Transcription of interview with Michelle Hunziker',
    :rating_client => 2, :rating_text => 'a bit imprecise, but good all in all'},
 ], :without_protection => true)
-
-Language.delete_all
-Language.create([
-  {:name => 'German'},
-  {:name => 'English'},
-  {:name => 'Spanish'},
-  {:name => 'French'},
-  {:name => 'Italian'},
-])
+                #, :language_id => Language.first.id
 
 ServicePartner.delete_all
 sp1 = ServicePartner.create(

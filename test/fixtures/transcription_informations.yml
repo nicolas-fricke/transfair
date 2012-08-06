@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  duration: 2012-08-07 01:04:36
+  category_id: 1
+  starting_point: 2012-08-07 01:04:36
+  ending_point: 2012-08-07 01:04:36
+  is_detailed_transcription: false
+  audio_quality: 1
+  speaker_accent: 1
+  number_speaker: 1
+  is_content_focused: false
+  with_pause_interjection: false
+  with_emotion_interjection: false
+  with_pause: false
+  with_interruption: false
+  with_time_stamp: false
+  field_id: 1
+  background_information: MyText
+  recurring_denominations: MyText
+
+two:
+  duration: 2012-08-07 01:04:36
+  category_id: 1
+  starting_point: 2012-08-07 01:04:36
+  ending_point: 2012-08-07 01:04:36
+  is_detailed_transcription: false
+  audio_quality: 1
+  speaker_accent: 1
+  number_speaker: 1
+  is_content_focused: false
+  with_pause_interjection: false
+  with_emotion_interjection: false
+  with_pause: false
+  with_interruption: false
+  with_time_stamp: false
+  field_id: 1
+  background_information: MyText
+  recurring_denominations: MyText
