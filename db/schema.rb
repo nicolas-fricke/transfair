@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806215739) do
+ActiveRecord::Schema.define(:version => 20120806220757) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -63,6 +63,12 @@ ActiveRecord::Schema.define(:version => 20120806215739) do
 
   add_index "fair_wages", ["country_id"], :name => "index_fair_wages_on_country_id"
 
+  create_table "fields", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "job_statuses", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -89,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20120806215739) do
     t.datetime "updated_at",                                       :null => false
     t.decimal  "special_price",     :precision => 10, :scale => 0
     t.integer  "rating_supervisor"
+    t.integer  "language_id"
   end
 
   add_index "jobs", ["client_id"], :name => "index_jobs_on_client_id"

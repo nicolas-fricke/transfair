@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  job_id: 1
+  service_partner_id: 1
+  rating: 1
+  rating_text: MyText
+
+two:
+  job_id: 1
+  service_partner_id: 1
+  rating: 1
+  rating_text: MyText

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Job:</b>
+  <%= @spotcheck.job_id %>
+</p>
+
+<p>
+  <b>Service partner:</b>
+  <%= @spotcheck.service_partner_id %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @spotcheck.rating %>
+</p>
+
+<p>
+  <b>Rating text:</b>
+  <%= @spotcheck.rating_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_spotcheck_path(@spotcheck) %> |
+<%= link_to 'Back', spotchecks_path %>

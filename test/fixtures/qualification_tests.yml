@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  language_id: 1
+  job_type_id: MyString
+  result: 1
+
+two:
+  language_id: 1
+  job_type_id: MyString
+  result: 1
