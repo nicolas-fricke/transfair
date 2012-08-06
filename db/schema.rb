@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805201401) do
+ActiveRecord::Schema.define(:version => 20120806215739) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(:version => 20120805201401) do
     t.text     "rating_text"
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
-    t.decimal  "discount_price",    :precision => 10, :scale => 0
+    t.decimal  "special_price",     :precision => 10, :scale => 0
     t.integer  "rating_supervisor"
   end
 

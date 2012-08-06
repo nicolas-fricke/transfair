@@ -10,7 +10,10 @@ class Job < ActiveRecord::Base
 
   #validates :client_id, :presence => true      #automatically set when new job
   validates :deadline_client, :presence => true
+  #validates :deadline_client, :date => {:after => Time.now}
+  #validates :deadline_intern, :date => {:after => Time.now}
   #validates :job_status_id, :presence => true
+
 
   def init
     self.status ||= JobStatus.first
