@@ -8,16 +8,42 @@
 
 Affiliation.delete_all
 Affiliation.create([
-    {:name => 'FB'},
+    {:name => 'choose this if you used our services before'},
+    {:name => 'Friends/ colleagues/ family'},
+    {:name => 'at an offline event'},
+    {:name => 'resulted at a search engine'},
+    {:name => 'online advertisement (facebook)'},
+    {:name => 'online advertisement (google)'},
+    {:name => 'read about it in a blog'},
+    {:name => 'read about it in a newspaper'},
+    {:name => 'online advertisement (facebook)'},
+    {:name => 'online advertisement (google)'},
+    {:name => 'social network/ twitter'},
+    {:name => 'other'},
+
 ])
 
 Country.delete_all
 Country.create([
+  {:currency => 'BDT', :name => 'Bangladesh'},
+  {:currency => 'BOB', :name => 'Bolivia'},
+  {:currency => 'XAF', :name => 'Cameroon'},
+  {:currency => 'CNY', :name => 'China'},
+  {:currency => 'INR', :name => 'India'},
+  {:currency => 'IDR', :name => 'Indonesia'},
+  {:currency => 'KZT', :name => 'Kazakhstan'},
+  {:currency => 'KES', :name => 'Kenya'},
   {:currency => 'MWK', :name => 'Malawi'},
-  {:currency => 'GHC', :name => 'Ghana'},
-  {:currency => 'Z$', :name => 'Zimbabwe'},
-  {:currency => 'CFA Franc', :name => 'Cameroon'},
-  {:currency => 'CDF', :name => 'Congo'},
+  {:currency => 'NGN', :name => 'Nigeria'},
+  {:currency => 'PKR', :name => 'Pakistan'},
+  {:currency => 'PGK', :name => 'Papa New Guinea'},
+  {:currency => 'PHP', :name => 'Philippines'},
+  {:currency => 'LKR', :name => 'Sri Lanka'},
+  {:currency => 'TZS', :name => 'Tanzania'},
+  {:currency => 'THB', :name => 'Thailand'},
+  {:currency => 'UGX', :name => 'Uganda'},
+  {:currency => 'VND', :name => 'Vietnam'},
+  {:currency => 'USD', :name => 'Zimbabwe'},
 ])
 
 Client.delete_all
