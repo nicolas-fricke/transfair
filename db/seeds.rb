@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -29,6 +30,7 @@ Country.create([
   {:currency => 'BOB', :name => 'Bolivia'},
   {:currency => 'XAF', :name => 'Cameroon'},
   {:currency => 'CNY', :name => 'China'},
+  {:currency => 'GHC', :name => 'Ghana'},
   {:currency => 'INR', :name => 'India'},
   {:currency => 'IDR', :name => 'Indonesia'},
   {:currency => 'KZT', :name => 'Kazakhstan'},
@@ -88,7 +90,7 @@ Education.create([
 
 FairWage.delete_all
 FairWage.create([
-  {:country_id => Country.find_by_name('Bangladesh').id, :amount => 125, :date => Date.new(2012,8,7)},
+  {:country_id => Country.find_by_name('Bangladesh'), :amount => 125, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Bolivia').id, :amount => 12.5, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Cameroon').id, :amount => 825, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('China').id, :amount => 11, :date => Date.new(2012,8,7)},
@@ -102,7 +104,7 @@ FairWage.create([
   {:country_id => Country.find_by_name('Pakistan').id, :amount => 150, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Papa New Guinea').id, :amount => 3.75, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Philippines').id, :amount => 75, :date => Date.new(2012,8,7)},
-  {:country_id => Country.find_by_name('Sri Lanka').id, :amount => 187.5, :date => Date.new(2012,8,7),
+  {:country_id => Country.find_by_name('Sri Lanka').id, :amount => 187.5, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Tanzania').id, :amount => 2875, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Thailand').id, :amount => 52.5, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Uganda').id, :amount => 5000, :date => Date.new(2012,8,7)},
@@ -166,7 +168,7 @@ Job.create([
 
 ServicePartner.delete_all
 sp1 = ServicePartner.create(
-  :country_id => Country.find_by_name('Kenya').id, :education_id => Education.find_by_name('tertiary education/university').id :date_of_birth => Date.new(1979,4,27), :city => '',
+  :country_id => Country.find_by_name('Kenya').id, :education_id => Education.find_by_name('tertiary education/university').id, :date_of_birth => Date.new(1979,4,27), :city => '',
   :education_background => 'I have studied economics to a diploma level among other certificates.', :email => 'ngugij12@gmail.com', :internet_access => 'at home',
   :internet_use => '2-3 times per week', :is_urban => true, :name => 'James', :phone_number => '',
   :surname => 'Ngugi', :work_experience => 'I have been self employed but finding it hard to sustain because of the economic situation in the country.')
