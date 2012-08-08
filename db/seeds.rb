@@ -90,7 +90,7 @@ Education.create([
 
 FairWage.delete_all
 FairWage.create([
-  {:country_id => Country.find_by_name('Bangladesh'), :amount => 125, :date => Date.new(2012,8,7)},
+  {:country_id => Country.find_by_name('Bangladesh').id, :amount => 125, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Bolivia').id, :amount => 12.5, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('Cameroon').id, :amount => 825, :date => Date.new(2012,8,7)},
   {:country_id => Country.find_by_name('China').id, :amount => 11, :date => Date.new(2012,8,7)},
