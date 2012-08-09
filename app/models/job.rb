@@ -9,6 +9,7 @@ class Job < ActiveRecord::Base
   has_many :employments
   has_many :service_partners, :through => :employments
 
+  validates :name, :presence => true
   #validates :client_id, :presence => true      #automatically set when new job
   validates :deadline_client, :presence => true
   #validates :deadline_client, :date => {:after => Time.now}
