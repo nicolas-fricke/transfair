@@ -32,6 +32,7 @@ group :assets do
   gem 'bootstrap-timepicker-rails', '~> 0.1.2'
   gem 'simple-navigation'
   gem 'simple-navigation-bootstrap'
+  gem 'simple_form'
 end
 
 gem 'jquery-rails'
