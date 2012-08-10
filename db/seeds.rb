@@ -21,6 +21,7 @@ Affiliation.create([
     {:name => 'online advertisement (google)'},
     {:name => 'social network/ twitter'},
     {:name => 'other'},
+    {:name => 'my girlfriend told me'},
 
 ])
 
