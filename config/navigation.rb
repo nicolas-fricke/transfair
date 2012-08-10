@@ -58,7 +58,16 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :clients, 'Clients', clients_path
     primary.item :servicePartners, 'Service Partners', service_partners_path
     primary.item :jobs, 'Jobs', jobs_path
-    primary.item :languages, 'Languages', languages_path
+    primary.item :other_options, 'Other options', '#' do |sub_nav|
+      sub_nav.item :affiliations, 'Affiliations', affiliations_path
+      sub_nav.item :countries, 'Countries', countries_path
+      sub_nav.item :fair_wages, 'Fair Wages', fair_wages_path
+      sub_nav.item :fields, 'Fields', fields_path
+      sub_nav.item :job_statuses, 'Job Statuses', job_statuses_path
+      sub_nav.item :languages, 'Languages', languages_path
+      sub_nav.item :spotchecks, 'Spotchecks', spotchecks_path
+      sub_nav.item :transcription_informations, 'Transcription Informations', transcription_informations_path
+    end
     primary.item :user, (user_signed_in? ? current_user.email : "Not logged in"), '#', :icon => 'icon-user', :class => 'pull-right' do |user_nav|
       user_nav.item :user_signIn, 'Sign in', new_user_session_path, :unless => lambda{user_signed_in?}
       user_nav.item :user_signUp, 'Register', new_user_registration_path, :unless => lambda{user_signed_in?}
