@@ -33,6 +33,8 @@ group :assets do
   gem 'simple-navigation'
   gem 'simple-navigation-bootstrap'
   gem 'simple_form'
+  gem 'dropbox-sdk'
+
 end
 
 gem 'jquery-rails'
