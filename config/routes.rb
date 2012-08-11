@@ -1,4 +1,11 @@
 Transfair::Application.routes.draw do
+  get "dropbox/index"
+  get "dropbox/upload"
+  post "dropbox/upload"
+  get "dropbox/authorize"
+  match 'db/authorize', :controller => 'db', :action => 'authorize'
+  match 'db/upload', :controller => 'db', :action => 'upload'
+
   resources :transcription_informations
 
   resources :spotchecks
