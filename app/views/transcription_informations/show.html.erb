@@ -1,90 +1,53 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = TranscriptionInformation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Duration:</b>
-  <%= @transcription_information.duration %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:duration) %>:</strong></dt>
+  <dd><%= @transcription_information.duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
+  <dd><%= @transcription_information.category_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:starting_point) %>:</strong></dt>
+  <dd><%= @transcription_information.starting_point %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ending_point) %>:</strong></dt>
+  <dd><%= @transcription_information.ending_point %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_detailed_transcription) %>:</strong></dt>
+  <dd><%= @transcription_information.is_detailed_transcription %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:audio_quality) %>:</strong></dt>
+  <dd><%= @transcription_information.audio_quality %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:speaker_accent) %>:</strong></dt>
+  <dd><%= @transcription_information.speaker_accent %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:number_speaker) %>:</strong></dt>
+  <dd><%= @transcription_information.number_speaker %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_content_focused) %>:</strong></dt>
+  <dd><%= @transcription_information.is_content_focused %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:with_pause_interjection) %>:</strong></dt>
+  <dd><%= @transcription_information.with_pause_interjection %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:with_emotion_interjection) %>:</strong></dt>
+  <dd><%= @transcription_information.with_emotion_interjection %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:with_pause) %>:</strong></dt>
+  <dd><%= @transcription_information.with_pause %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:with_interruption) %>:</strong></dt>
+  <dd><%= @transcription_information.with_interruption %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:with_time_stamp) %>:</strong></dt>
+  <dd><%= @transcription_information.with_time_stamp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:field_id) %>:</strong></dt>
+  <dd><%= @transcription_information.field_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:background_information) %>:</strong></dt>
+  <dd><%= @transcription_information.background_information %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:recurring_denominations) %>:</strong></dt>
+  <dd><%= @transcription_information.recurring_denominations %></dd>
+</dl>
 
-<p>
-  <b>Category:</b>
-  <%= @transcription_information.category_id %>
-</p>
-
-<p>
-  <b>Starting point:</b>
-  <%= @transcription_information.starting_point %>
-</p>
-
-<p>
-  <b>Ending point:</b>
-  <%= @transcription_information.ending_point %>
-</p>
-
-<p>
-  <b>Is detailed transcription:</b>
-  <%= @transcription_information.is_detailed_transcription %>
-</p>
-
-<p>
-  <b>Audio quality:</b>
-  <%= @transcription_information.audio_quality %>
-</p>
-
-<p>
-  <b>Speaker accent:</b>
-  <%= @transcription_information.speaker_accent %>
-</p>
-
-<p>
-  <b>Number speaker:</b>
-  <%= @transcription_information.number_speaker %>
-</p>
-
-<p>
-  <b>Is content focused:</b>
-  <%= @transcription_information.is_content_focused %>
-</p>
-
-<p>
-  <b>With pause interjection:</b>
-  <%= @transcription_information.with_pause_interjection %>
-</p>
-
-<p>
-  <b>With emotion interjection:</b>
-  <%= @transcription_information.with_emotion_interjection %>
-</p>
-
-<p>
-  <b>With pause:</b>
-  <%= @transcription_information.with_pause %>
-</p>
-
-<p>
-  <b>With interruption:</b>
-  <%= @transcription_information.with_interruption %>
-</p>
-
-<p>
-  <b>With time stamp:</b>
-  <%= @transcription_information.with_time_stamp %>
-</p>
-
-<p>
-  <b>Field:</b>
-  <%= @transcription_information.field_id %>
-</p>
-
-<p>
-  <b>Background information:</b>
-  <%= @transcription_information.background_information %>
-</p>
-
-<p>
-  <b>Recurring denominations:</b>
-  <%= @transcription_information.recurring_denominations %>
-</p>
-
-
-<%= link_to 'Edit', edit_transcription_information_path(@transcription_information) %> |
-<%= link_to 'Back', transcription_informations_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              transcription_informations_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_transcription_information_path(@transcription_information), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              transcription_information_path(@transcription_information),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

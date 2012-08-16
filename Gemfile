@@ -34,7 +34,7 @@ group :assets do
   gem 'simple-navigation-bootstrap'
   gem 'simple_form'
   gem 'dropbox-sdk'
-
+  gem 'time_diff'
 end
 
 # for deployment
