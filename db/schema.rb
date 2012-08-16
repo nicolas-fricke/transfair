@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807225244) do
+ActiveRecord::Schema.define(:version => 20120816111011) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20120807225244) do
     t.decimal  "internet_price",       :precision => 10, :scale => 0
     t.boolean  "active"
     t.text     "work_perspective"
+    t.boolean  "is_female"
   end
 
   add_index "service_partners", ["country_id"], :name => "index_service_partners_on_country_id"

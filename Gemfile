@@ -37,6 +37,13 @@ group :assets do
 
 end
 
+# for deployment
+gem 'bundle'
+gem 'railshoster'
+gem 'gli', '~> 1.6.0'
+
+
+
 gem 'jquery-rails'
 
 # Authentification
