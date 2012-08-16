@@ -7,6 +7,7 @@
   <%= f.input :phone_number, :hint => 'no slash or "-"' %>
   <%= f.input :company, :priority =>["Ghana"]  %>
   <%= f.input :position %>
+
   <%= f.association :jobs, :as => :radio_buttons %>
   <%= f.button :submit %>
 <% end %>

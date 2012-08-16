@@ -3,6 +3,7 @@ class Job < ActiveRecord::Base
   belongs_to :job_type
   belongs_to :job_status
   belongs_to :language_id
+  belongs_to :transcription_information
   attr_accessible :client_paid, :name, :rating_client, :rating_text,
                   :job_type_id, :job_status_id, :deadline_client, :language_id
 
