@@ -7,7 +7,8 @@ class ServicePartner < ActiveRecord::Base
   belongs_to :qualification_test
   attr_accessible :date_of_birth, :city, :education_background, :email, :internet_access,
                   :internet_use, :is_urban, :name,
-                  :phone_number, :surname, :work_experience, :country_id, :education_id, :jobs
+                  :phone_number, :surname, :work_experience, :country, :education, :jobs,
+                  :affiliation, :work_perspective, :active, :internet_price
 
   has_many :employments
   has_many :jobs, :through => :employments
