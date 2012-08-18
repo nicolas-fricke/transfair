@@ -4,6 +4,7 @@ class ServicePartner < ActiveRecord::Base
   belongs_to :work_field, :class_name => "Field"
   belongs_to :education_field, :class_name => "Field"
   belongs_to :affiliation
+  belongs_to :qualification_test
   attr_accessible :date_of_birth, :city, :education_background, :email, :internet_access,
                   :internet_use, :is_urban, :name,
                   :phone_number, :surname, :work_experience, :country_id, :education_id, :jobs
