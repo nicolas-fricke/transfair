@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
-  attr_accessible :company, :email, :name, :phone_number, :position, :surname, :affiliation, :country_id, :affiliation_id
+  attr_accessible :company, :email, :name, :phone_number, :position, :surname,
+                  :affiliation, :country
   belongs_to :country
   belongs_to :affiliation
 
