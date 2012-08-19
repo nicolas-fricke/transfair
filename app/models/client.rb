@@ -12,13 +12,13 @@ class Client < ActiveRecord::Base
 
 
 
-  def self.search(search)       # do with scope is maybe better  #what do we need this for?
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
+#  def self.search(search)       # do with scope is maybe better  #what do we need this for?
+#    if search
+#      where('name LIKE ?', "%#{search}%")
+#    else
+#      scoped
+#    end
+#  end
 
   def full_name
     "#{self.name} #{self.surname}"
