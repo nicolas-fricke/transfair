@@ -1,6 +1,6 @@
 class DropCountriesTranscriptionInformationTable < ActiveRecord::Migration
   def up
-    drop_table :countries_transcription_information
+    drop_table "countries_transcription_informations"
   end
 
   def down
