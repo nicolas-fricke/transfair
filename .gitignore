@@ -19,3 +19,4 @@ pickle-email-*.html
 *.swp
 *.swo
 *.idea/*
+.DS_Store
