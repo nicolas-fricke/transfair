@@ -18,6 +18,6 @@ pickle-email-*.html
 *.lock
 *.swp
 *.swo
-*.~un
+*.un~
 *.idea/*
 .DS_Store
