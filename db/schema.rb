@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819104219) do
+ActiveRecord::Schema.define(:version => 20120816111011) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -112,17 +112,6 @@ ActiveRecord::Schema.define(:version => 20120819104219) do
   add_index "jobs", ["client_id"], :name => "index_jobs_on_client_id"
   add_index "jobs", ["job_status_id"], :name => "index_jobs_on_job_status_id"
   add_index "jobs", ["job_type_id"], :name => "index_jobs_on_job_type_id"
-
-  create_table "jobs_service_partners", :force => true do |t|
-    t.integer  "job_id"
-    t.integer  "service_partner_id"
-    t.boolean  "paid"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  add_index "jobs_service_partners", ["job_id"], :name => "index_jobs_service_partners_on_job_id"
-  add_index "jobs_service_partners", ["service_partner_id"], :name => "index_jobs_service_partners_on_service_partner_id"
 
   create_table "languages", :force => true do |t|
     t.string   "name"
