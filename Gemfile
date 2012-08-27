@@ -38,8 +38,6 @@ group :assets do
 end
 
 # for deployment
-gem 'bundle'
-gem 'railshoster'
 
 
 
