@@ -1,23 +1,7 @@
-<%= form_for @service_partner, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :surname, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :surname, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-
+<%= simple_form_for @service_partner, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :surname %>
+  <%= f.input :email %>
   <div class="control-group">
     <%= f.label :date_of_birth, :class => 'control-label' %>
     <div class="controls">
@@ -25,65 +9,16 @@
       <i class="icon-calendar" style="margin: -2px 0 0 -26px; pointer-events: none; position: relative;"></i>
     </div>
   </div>
+  <%= f.input :phone_number %>
+  <%= f.input :country_id, :collection => Country.all.collect { |p| [ p.name , p.id ] } %>
+  <%= f.input :city %>
+  <%= f.input :is_urban %>
+  <%= f.input :education_id, :collection => Education.all.collect { |p| [ p.name , p.id ] } %>
+  <%= f.input :education_background %>
+  <%= f.input :work_experience %>
+  <%= f.input :internet_access %>
+  <%= f.input :internet_use %>
 
-  <div class="control-group">
-    <%= f.label :phone_number, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :phone_number, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :country_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= select("service_partner",:country_id, Country.all.collect { |p| [ p.name , p.id ] }, { :include_blank => true }) %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :city, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :city, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :is_urban, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :is_urban, :class => 'check_box' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :education_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= select("service_partner",:education_id, Education.all.collect { |p| [ p.name , p.id ] }, { :include_blank => true }) %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :education_background, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :education_background, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :work_experience, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :work_experience, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :internet_access, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :internet_access, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :internet_use, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :internet_use, :class => 'text_area' %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                service_partner_path, :class => 'btn' %>
-  </div>
+  <%= f.button :submit %>
 <% end %>
+

@@ -5,9 +5,22 @@ class Job < ActiveRecord::Base
   belongs_to :language
   belongs_to :transcription_information
 
-  attr_accessible :client_paid, :name, :rating_client, :rating_text,
-                  :job_type, :job_status, :deadline_client, :language,
-                  :client, :deadline_intern, :service_partners
+
+  attr_accessible  :name,
+                   :client_id,
+                   :deadline_client,
+                   :deadline_intern,
+                   :job_type_id,
+                   :job_status_id,
+                   :client_paid,
+                   :rating_client,
+                   :rating_text,
+                   :created_at,
+                   :updated_at,
+                   :special_price,
+                   :language_id,
+                   :trancription_information_id
+
 
   has_many :employments
   has_many :service_partners, :through => :employments
