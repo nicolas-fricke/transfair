@@ -51,29 +51,29 @@ Country.create([
 
 Client.delete_all
 Client.create([
-  {:company => 'Steinbeis University', :email => 'bbulatovic@steinbeis-icrm.eu', :name => 'Boris',
-   :phone_number => '', :position => 'coordinator course of study "responsible management"', :surname => 'Bulatovic',
+  {:company => 'Stuutgart University', :email => 'blatovic@steinbeis-icrm.eu', :name => 'Boris',
+   :phone_number => '', :position => 'coordinator course of study "responsible management"', :surname => 'Blatovic',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'HSFK', :email => 'fey@hsfk.de', :name => 'Marco',
-   :phone_number => '', :position => 'PhD Student', :surname => 'Fey',
+  {:company => 'HBFK', :email => 'fly@hbfk.de', :name => 'Mark',
+   :phone_number => '', :position => 'PhD Student', :surname => 'Fly',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'HSFK', :email => 'poppe@hsfk.de', :name => 'Annika',
-   :phone_number => '', :position => 'PhD Student', :surname => 'Poppe',
+  {:company => 'HSBK', :email => 'pop@hsbk.de', :name => 'Ann',
+   :phone_number => '', :position => 'PhD Student', :surname => 'Pop',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'iq-consult', :email => 'chri_noel@hotmail.com', :name => 'Christing',
-   :phone_number => '', :position => 'intern', :surname => 'Noel',
+  {:company => 'IQ', :email => 'christopher_nolan@hotmail.com', :name => 'Christopher',
+   :phone_number => '', :position => 'intern', :surname => 'Nolan',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'HSFK', :email => 'herr@hsfk.de', :name => 'Steffi',
-   :phone_number => '', :position => 'PhD Student', :surname => 'Herr',
+  {:company => 'HBFK', :email => 'jerry@hbfk.de', :name => 'Jeff',
+   :phone_number => '', :position => 'PhD Student', :surname => 'Jerry',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'project winch 5', :email => 'pisani.winch5@gmail.com', :name => 'Francis',
-   :phone_number => '', :position => 'journalist', :surname => 'Pisani',
+  {:company => 'project wiki 5', :email => 'pikani.wiki5@gmail.com', :name => 'Frank',
+   :phone_number => '', :position => 'journalist', :surname => 'Pikani',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'Robotspodcast', :email => 'adrien.briod@robotspodcast.com', :name => 'Adrien',
-   :phone_number => '+41788317234', :position => '', :surname => 'Briod',
+  {:company => 'Radiopodcast', :email => 'adrion.brown@radiopodcast.com', :name => 'Adrion',
+   :phone_number => '+491762379800', :position => '', :surname => 'Brown',
    :country =>Country.first, :affiliation => Affiliation.first},
-  {:company => 'Löwenherz Grafikdesign', :email => 'jan@janloewenherz.com', :name => 'Jan',
-   :phone_number => '', :position => 'freelancer', :surname => 'Löwenherz',
+  {:company => 'Löwez Grafikdesign', :email => 'jane@janlowez.com', :name => 'Jane',
+   :phone_number => '', :position => 'freelancer', :surname => 'Löwez',
    :country =>Country.first, :affiliation => Affiliation.first},
 ])
 
@@ -156,12 +156,12 @@ Language.create([
 
 Job.delete_all
 job1 = Job.create(
-   :client => Client.find_by_name('Adrien'), :job_status => JobStatus.find_by_name('accepted'), :job_type => JobType.find_by_name('transcription'),
+   :client => Client.find_by_name('Adrion'), :job_status => JobStatus.find_by_name('accepted'), :job_type => JobType.find_by_name('transcription'),
    :client_paid  => false, :deadline_client => Date.new(2012,8,10),
    :deadline_intern => Date.new(2012,8,9), :name => 'Tc – podcast project - 1st batch part I',
    :rating_client => 1, :rating_text => '', :language => Language.find_by_name('English'))
 job2 = Job.create(
-   :client => Client.find_by_name('Adrien'), :job_status => JobStatus.find_by_name('accepted'), :job_type => JobType.find_by_name('transcription'),
+   :client => Client.find_by_name('Adrion'), :job_status => JobStatus.find_by_name('accepted'), :job_type => JobType.find_by_name('transcription'),
    :client_paid => false, :deadline_client => Date.new(2012,8,10),
    :deadline_intern => Date.new(2012,8,9), :name => 'Tc – podcast project - 1st batch part II',
    :rating_client => 2 , :rating_text => '', :language => Language.find_by_name('English'))
