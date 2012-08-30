@@ -7,18 +7,18 @@ class Job < ActiveRecord::Base
 
 
   attr_accessible  :name,
-                   :client_id,
+                   :client_id, :client,
                    :deadline_client,
                    :deadline_intern,
-                   :job_type_id,
-                   :job_status_id,
+                   :job_type_id, :job_type,
+                   :job_status_id, :job_status,
                    :client_paid,
                    :rating_client,
                    :rating_text,
                    :created_at,
                    :updated_at,
                    :special_price,
-                   :language_id,
+                   :language_id, :language,
                    :trancription_information_id
 
 
