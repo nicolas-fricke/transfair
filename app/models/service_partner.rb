@@ -8,10 +8,15 @@ class ServicePartner < ActiveRecord::Base
 
   has_many :employments
   has_many :jobs, :through => :employments
+  
+  validates :name, :presence => true
+  validates :surname, :presence => true
+  validates :email, :confirmation => true, :presence => true
+  validates :email_confirmation, :presence => true
 
   attr_accessible :name,
                   :surname,
-                  :email,
+                  :email, :email_confirmation, 
                   :phone_number,
                   :country_id, :country,
                   :city,
