@@ -26,8 +26,8 @@ class ServicePartner < ActiveRecord::Base
                   :work_field_id,
                   :affiliation_id,
                   :internet_price,
-                  :active,
-                  :work_perspective,
+                  # :active,
+                  :work_perspective, # TODO: What does this field mean?
                   :is_female
 
   def full_name
