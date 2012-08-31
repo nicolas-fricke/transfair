@@ -2,6 +2,7 @@
   <%= f.input :name %>
   <%= f.input :surname %>
   <%= f.input :email %>
+  <%= f.input :email_confirmation %>
   <div class="control-group">
     <%= f.label :date_of_birth, :class => 'control-label' %>
     <div class="controls">
@@ -9,7 +10,7 @@
       <i class="icon-calendar" style="margin: -2px 0 0 -26px; pointer-events: none; position: relative;"></i>
     </div>
   </div>
-  <%= f.input :phone_number %>
+  <%= f.input :phone_number, :hint => 'No spaces or "-"' %>
   <%= f.input :country_id, :collection => Country.all.collect { |p| [ p.name , p.id ] } %>
   <%= f.input :city %>
   <%= f.input :is_urban %>
