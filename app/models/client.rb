@@ -14,8 +14,8 @@ class Client < ActiveRecord::Base
                   :phone_number,
                   :company,
                   :position,
-                  :affiliation_id,
-                  :country_id
+                  :affiliation_id, :affiliation,
+                  :country_id, :country
 
 #  def self.search(search)       # do with scope is maybe better  #what do we need this for?
 #    if search

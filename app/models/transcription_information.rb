@@ -4,7 +4,7 @@ class TranscriptionInformation < ActiveRecord::Base
   has_one :job
 
   attr_accessible :duration,
-                  :category_id,
+                  :category_id, :category,
                   :starting_point,
                   :ending_point,
                   :is_detailed_transcription,
@@ -17,7 +17,7 @@ class TranscriptionInformation < ActiveRecord::Base
                   :with_pause,
                   :with_interruption,
                   :with_time_stamp,
-                  :field_id,
+                  :field_id, :field,
                   :background_information,
                   :recurring_denominations
 

@@ -8,17 +8,17 @@ class Job < ActiveRecord::Base
   has_many :service_partners, :through => :employments
 
   attr_accessible :name,
-                  :client_id,
+                  :client_id, :client,
                   :deadline_client,
                   # :deadline_intern,
-                  :job_type_id,
+                  :job_type_id, :job_type,
                   # :job_status_id,
                   # :client_paid,
                   # :rating_client,
                   # :rating_text,
                   # :special_price,
-                  :language_id,
-                  :trancription_information_id
+                  :language_id, :language,
+                  :trancription_information_id, :trancription_information
 
   validates :name, :presence => true
   #validates :client_id, :presence => true      #automatically set when new job

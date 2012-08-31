@@ -3,5 +3,5 @@ class FairWage < ActiveRecord::Base
 
   attr_accessible :amount, # TODO: Not sure, if this should be removed due to security
                   :date,
-                  :country_id
+                  :country_id, :country
 end

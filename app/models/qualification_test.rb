@@ -5,7 +5,7 @@ class QualificationTest < ActiveRecord::Base
 
   # TODO: Do we need anything accessible here? I think this gets all just set
   #       by program logic – or am I wrong?
-  attr_accessible :job_type_id,
-                  :language_id
+  attr_accessible :job_type_id, :job_type,
+                  :language_id, :language
                   # :result
 end
