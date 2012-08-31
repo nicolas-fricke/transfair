@@ -6,11 +6,12 @@ class Client < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :surname, :presence => true
-  validates :email, :presence => true
-  validates :country_id, :presence => true
+  validates :email, :confirmation => true, :presence => true
+  validates :email_confirmation, :presence => true
+  
   attr_accessible :name,
                   :surname,
-                  :email,
+                  :email, :email_confirmation, 
                   :phone_number,
                   :company,
                   :position,

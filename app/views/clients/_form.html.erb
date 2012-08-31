@@ -1,14 +1,17 @@
 <%= simple_form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name, :required => false %>
+  <%= f.input :name %>
   <%= f.input :surname %>
   <%= f.input :email %>
-  <%= f.input :country_id, :collection => Country.all.collect { |p| [ p.name , p.id ]}%>
-  <%= f.input :affiliation_id, :collection =>  Affiliation.all.collect { |p| [ p.name , p.id ] }%>
+  <%= f.input :email_confirmation %>
   <%= f.input :phone_number, :hint => 'no slash or "-"' %>
-  <%= f.input :company, :priority =>["Ghana"]  %>
+  <%= f.input :company %>
   <%= f.input :position %>
-
+  <%# f.input :language_id%>
+  <%= f.input :affiliation_id, :collection =>  
+  Affiliation.all.collect { |p| [ p.name , p.id ] }%>
+  <%#= f.input "Language", :prompt => "Select your language" %>
   <%= f.association :jobs, :as => :radio_buttons %>
   <%= f.button :submit %>
 <% end %>
+
 
