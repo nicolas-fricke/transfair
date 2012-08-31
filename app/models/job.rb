@@ -4,26 +4,21 @@ class Job < ActiveRecord::Base
   belongs_to :job_status
   belongs_to :language
   belongs_to :transcription_information
-
-
-  attr_accessible  :name,
-                   :client_id, :client,
-                   :deadline_client,
-                   :deadline_intern,
-                   :job_type_id, :job_type,
-                   :job_status_id, :job_status,
-                   :client_paid,
-                   :rating_client,
-                   :rating_text,
-                   :created_at,
-                   :updated_at,
-                   :special_price,
-                   :language_id, :language,
-                   :trancription_information_id
-
-
   has_many :employments
   has_many :service_partners, :through => :employments
+
+  attr_accessible :name,
+                  :client_id,
+                  :deadline_client,
+                  :deadline_intern,
+                  :job_type_id,
+                  :job_status_id,
+                  :client_paid,
+                  :rating_client,
+                  :rating_text,
+                  :special_price,
+                  :language_id,
+                  :trancription_information_id
 
   validates :name, :presence => true
   #validates :client_id, :presence => true      #automatically set when new job
@@ -31,7 +26,6 @@ class Job < ActiveRecord::Base
   #validates :deadline_client, :date => {:after => Time.now}
   #validates :deadline_intern, :date => {:after => Time.now}
   #validates :job_status_id, :presence => true
-
 
  # def init
   #  self.status ||= JobStatus.first
