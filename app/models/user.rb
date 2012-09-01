@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   belongs_to :country
   belongs_to :affiliation
 
+  validates :email, :presence => true
+  validates :password, :presence => true
+  validates :password_confirmation, :presence => true
+  validates :name, :presence => true
+  validates :surname, :presence => true
+
   after_create :send_confirmation_email
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email,

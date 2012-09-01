@@ -1,9 +1,6 @@
 class Client < User
   has_many :jobs
 
-  validates :name, :presence => true
-  validates :surname, :presence => true
-
   attr_accessible :company,
                   :position
 
