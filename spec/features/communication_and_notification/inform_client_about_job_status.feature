@@ -1,4 +1,4 @@
-Feature: Inform client about Job Status
+Feature: Inform client about Job Status (Template 1 and 2)
 
 	In order to make sure that we have all required information in the beginning of the process so that it can run efficiently
 	As a Staff Member

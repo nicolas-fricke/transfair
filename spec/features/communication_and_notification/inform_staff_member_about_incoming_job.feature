@@ -1,4 +1,5 @@
-Feature: Inform Staff member about incoming job
+@wip
+Feature: Inform Staff member about incoming job (Template 21)
 
 	In order to process a Job quickly
 	As a Staff Member
