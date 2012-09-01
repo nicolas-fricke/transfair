@@ -49,6 +49,15 @@ gem 'devise'
 # User role management
 gem 'cancan'
 
+group :test do
+  gem 'rspec-rails'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'database_cleaner', '0.8.0' # For resetting the database after each test
+  gem "capybara", '1.1.2'
+  gem "capybara-webkit", '0.10.0'
+  gem 'launchy'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
