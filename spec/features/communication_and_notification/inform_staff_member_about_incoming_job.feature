@@ -6,4 +6,4 @@ Feature: Inform Staff member about incoming job
 	
 	Scenario:
 		When a client submitts a job
-		Then the email "Template 1" should be sent to "jobalert@transfair.co"
+		Then the email "Template 21" should be sent to "jobalert@transfair.co"
