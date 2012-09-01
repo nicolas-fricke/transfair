@@ -1,4 +1,4 @@
-class ServicePartner < ActiveRecord::Base
+class ServicePartner < User
   belongs_to :country
   belongs_to :education
   belongs_to :work_field, :class_name => "Field"
@@ -8,18 +8,13 @@ class ServicePartner < ActiveRecord::Base
 
   has_many :employments
   has_many :jobs, :through => :employments
-  
+
   validates :name, :presence => true
   validates :surname, :presence => true
   validates :email, :confirmation => true, :presence => true
   validates :email_confirmation, :presence => true
 
-  attr_accessible :name,
-                  :surname,
-                  :email, :email_confirmation, 
-                  :phone_number,
-                  :country_id, :country,
-                  :city,
+  attr_accessible :city,
                   :is_urban,
                   :education_id, :education,
                   :education_background,
@@ -32,12 +27,10 @@ class ServicePartner < ActiveRecord::Base
                   :affiliation_id, :affiliation,
                   :internet_price,
                   # :active,
-                  :work_perspective, # TODO: What does this field mean?
+                  :work_perspective,
                   :is_female
 
-  def full_name
-    "#{self.name} #{self.surname}"
-  end
+
 
   #def education
   #  Education.find_by_id(self.education_id)

@@ -8,15 +8,10 @@ class Client < ActiveRecord::Base
   validates :surname, :presence => true
   validates :email, :confirmation => true, :presence => true
   validates :email_confirmation, :presence => true
-  
-  attr_accessible :name,
-                  :surname,
-                  :email, :email_confirmation, 
-                  :phone_number,
-                  :company,
+
+  attr_accessible :company,
                   :position,
-                  :affiliation_id, :affiliation,
-                  :country_id, :country
+                  :affiliation_id, :affiliation
 
 #  def self.search(search)       # do with scope is maybe better  #what do we need this for?
 #    if search
