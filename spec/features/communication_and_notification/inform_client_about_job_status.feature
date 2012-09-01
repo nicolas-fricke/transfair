@@ -5,7 +5,7 @@ Feature: Inform client about Job Status
 	I want to let the client know whether the required information is complete or not complete
 	
 	Scenario: Staff Member decides information is missing
-		Given a client sent in a job
+		Given a client sent in the job "Transcription of the Hawaii interview"
 		  And the email address of the client is "markus@gmail.com"
 		  And I am on the "Job details" page
 		  And I filled in the comment field with "the audio is too bad"
@@ -15,7 +15,7 @@ Feature: Inform client about Job Status
 		  
 		  
 	Scenario: Staff Member decideds information is complete
-		Given a client sent in a job
+		Given a client sent in the job "Transcription of the Hawaii interview"
 		  And the email address of the client is "markus@gmail.com"
 		  And I am on the "Job details" page
 		When I click on the button "Information complete"
