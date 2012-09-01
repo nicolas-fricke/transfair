@@ -54,7 +54,7 @@ group :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'database_cleaner', '0.8.0' # For resetting the database after each test
   gem "capybara", '1.1.2'
-  gem "capybara-webkit", '0.10.0'
+  gem "capybara-webkit", '0.12.1'
   gem 'launchy'
 end
 
