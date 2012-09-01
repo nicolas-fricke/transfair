@@ -5,13 +5,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :country
+  belongs_to :affiliation
+
   after_create :send_confirmation_email
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email,
                   :name,
                   :surname,
-                  :country_id, :country,
+                  :is_female,
                   :phone_number,
+                  :country_id, :country,
+                  :affiliation_id, :affiliation,
                   :password,
                   :password_confirmation,
                   :remember_me

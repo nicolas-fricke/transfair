@@ -1,18 +1,11 @@
 class ServicePartner < User
-  belongs_to :country
   belongs_to :education
   belongs_to :work_field, :class_name => "Field"
   belongs_to :education_field, :class_name => "Field"
-  belongs_to :affiliation
   belongs_to :qualification_test
 
   has_many :employments
   has_many :jobs, :through => :employments
-
-  validates :name, :presence => true
-  validates :surname, :presence => true
-  validates :email, :confirmation => true, :presence => true
-  validates :email_confirmation, :presence => true
 
   attr_accessible :city,
                   :is_urban,
@@ -27,9 +20,7 @@ class ServicePartner < User
                   :affiliation_id, :affiliation,
                   :internet_price,
                   # :active,
-                  :work_perspective,
-                  :is_female
-
+                  :work_perspective
 
 
   #def education

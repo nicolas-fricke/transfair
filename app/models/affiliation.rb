@@ -1,5 +1,5 @@
 class Affiliation < ActiveRecord::Base
-  has_many :clients_id
+  has_many :users
 
   attr_accessible :name
 end

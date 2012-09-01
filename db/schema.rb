@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816111011) do
+ActiveRecord::Schema.define(:version => 20120901173932) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -23,19 +23,6 @@ ActiveRecord::Schema.define(:version => 20120816111011) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "clients", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "company"
-    t.string   "position"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "affiliation_id"
-    t.integer  "country_id"
   end
 
   create_table "countries", :force => true do |t|
@@ -127,34 +114,6 @@ ActiveRecord::Schema.define(:version => 20120816111011) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "service_partners", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.string   "email"
-    t.string   "phone_number"
-    t.integer  "country_id"
-    t.string   "city"
-    t.boolean  "is_urban"
-    t.integer  "education_id"
-    t.text     "education_background"
-    t.text     "work_experience"
-    t.text     "internet_access"
-    t.text     "internet_use"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
-    t.date     "date_of_birth"
-    t.integer  "education_field_id"
-    t.integer  "work_field_id"
-    t.integer  "affiliation_id"
-    t.decimal  "internet_price",       :precision => 10, :scale => 0
-    t.boolean  "active"
-    t.text     "work_perspective"
-    t.boolean  "is_female"
-  end
-
-  add_index "service_partners", ["country_id"], :name => "index_service_partners_on_country_id"
-  add_index "service_partners", ["education_id"], :name => "index_service_partners_on_education_id"
-
   create_table "spotchecks", :force => true do |t|
     t.integer  "job_id"
     t.integer  "service_partner_id"
@@ -187,18 +146,40 @@ ActiveRecord::Schema.define(:version => 20120816111011) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                                 :default => "", :null => false
+    t.string   "encrypted_password",                                    :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                                            :null => false
+    t.datetime "updated_at",                                                            :null => false
+    t.string   "type"
+    t.string   "name"
+    t.string   "surname"
+    t.boolean  "is_female"
+    t.string   "phone_number"
+    t.integer  "country_id"
+    t.integer  "affiliation_id"
+    t.string   "city"
+    t.boolean  "is_urban"
+    t.integer  "education_id"
+    t.text     "education_background"
+    t.text     "work_experience"
+    t.text     "internet_access"
+    t.text     "internet_use"
+    t.date     "date_of_birth"
+    t.integer  "education_field_id"
+    t.integer  "work_field_id"
+    t.decimal  "internet_price",         :precision => 10, :scale => 0
+    t.boolean  "active"
+    t.string   "work_perspective"
+    t.string   "company"
+    t.string   "position"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
