@@ -3,10 +3,8 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "transfair.co",
   :user_name            => "info@transfair.co",
-  # Ask Nico for the password
-  # After entrering the password, run:
-  # git update-index --assume-unchanged ./config/initializers/setup_mail.rb
-  :password             => "Ask nico for the password",
+  # Ask Nico for the password, then set it as an environment variable
+  :password             => ENV["TRANSFAIR_GMAIL_PASS"],
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
