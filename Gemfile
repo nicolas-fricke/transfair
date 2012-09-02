@@ -49,6 +49,9 @@ gem 'devise'
 # User role management
 gem 'cancan'
 
+
+gem 'state_machine', :require => 'state_machine/core'
+
 group :test do
   gem 'rspec-rails'
   gem "factory_girl_rails", "~> 4.0"
