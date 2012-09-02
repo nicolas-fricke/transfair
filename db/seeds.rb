@@ -50,62 +50,60 @@ Country.create([
 
 User.delete_all
 User.create([
-  {:email => 'nicolas@fricke.de', :password => 'nicolas'},
-  {:email => 'markus@hinsche.de', :password => 'markus'},
+  {:name => 'Nicolas', :surname => 'Fricke', :email => 'nicolas@fricke.de', :password => 'nicolas', :password_confirmation => 'nicolas'},
+  {:name => 'Markus', :surname => 'Hinsche', :email => 'markus@hinsche.de', :password => 'markus', :password_confirmation => 'markus'},
 ])
 
 Client.create([
   {:company => 'Stuutgart University', :email => 'blatovic@steinbeis-icrm.eu', :name => 'Boris',
    :phone_number => '', :position => 'coordinator course of study "responsible management"', :surname => 'Blatovic',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HBFK', :email => 'fly@hbfk.de', :name => 'Mark',
    :phone_number => '', :position => 'PhD Student', :surname => 'Fly',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HSBK', :email => 'pop@hsbk.de', :name => 'Ann',
    :phone_number => '', :position => 'PhD Student', :surname => 'Pop',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'IQ', :email => 'christopher_nolan@hotmail.com', :name => 'Christopher',
    :phone_number => '', :position => 'intern', :surname => 'Nolan',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HBFK', :email => 'jerry@hbfk.de', :name => 'Jeff',
    :phone_number => '', :position => 'PhD Student', :surname => 'Jerry',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'project wiki 5', :email => 'pikani.wiki5@gmail.com', :name => 'Frank',
    :phone_number => '', :position => 'journalist', :surname => 'Pikani',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'Radiopodcast', :email => 'adrion.brown@radiopodcast.com', :name => 'Adrion',
    :phone_number => '+491762379800', :position => '', :surname => 'Brown',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'Löwez Grafikdesign', :email => 'jane@janlowez.com', :name => 'Jane',
    :phone_number => '', :position => 'freelancer', :surname => 'Löwez',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
 ])
 
 sp1 = ServicePartner.create(
   :country => Country.find_by_name('Kenya'), :education => Education.find_by_name('tertiary education/university'), :date_of_birth => Date.new(1979,4,27), :city => '',
   :education_background => 'I have studied economics to a diploma level among other certificates.', :email => 'ngugij12@gmail.com', :internet_access => 'at home',
   :internet_use => '2-3 times per week', :is_urban => true, :name => 'James', :phone_number => '',
-  :surname => 'Ngugi', :work_experience => 'I have been self employed but finding it hard to sustain because of the economic situation in the country.')
+  :surname => 'Ngugi', :work_experience => 'I have been self employed but finding it hard to sustain because of the economic situation in the country.', :password => 'password', :password_confirmation => 'password')
 sp2 = ServicePartner.create(
   :country => Country.find_by_name('Uganda'), :education => Education.find_by_name('tertiary education/university'), :date_of_birth => Date.new(1989,4,4), :city => '',
   :education_background => 'I did Literature, Economics, History and Divinity in A Level at Kings College Budo.I have also finished my three years Bachelor of Science Degree in Accounting and Finance at Kyambogo University this year in May.', :email => 'tom.kalyesubula@aiesec.net', :internet_access => 'at home',
   :internet_use => 'every days', :is_urban => true, :name => 'Tom', :phone_number => '+2556779222883',
-  :surname => 'Kalyesubula', :work_experience => 'I have been working part time for AIESEC Uganda for the past two years. First as Local chapter Vice president for Finance and Administration, then for a year as Local Chapter President and now as the National Vice President for Product and Business Development.I was also while being president at the University worked a day job at Village Energy Company Limited as Finance and Administration Manager.')
+  :surname => 'Kalyesubula', :work_experience => 'I have been working part time for AIESEC Uganda for the past two years. First as Local chapter Vice president for Finance and Administration, then for a year as Local Chapter President and now as the National Vice President for Product and Business Development.I was also while being president at the University worked a day job at Village Energy Company Limited as Finance and Administration Manager.', :password => 'password', :password_confirmation => 'password')
 sp3 = ServicePartner.create(
   :country => Country.find_by_name('Nigeria'), :affiliation => Affiliation.find_by_name('online advertisement (facebook)'), :education => Education.find_by_name('tertiary education/university'), :date_of_birth => Date.new(1987,1,1), :city => 'Abuja',
   :education_background => 'Institution - Qualification Obtained - Date 1. Nigerian Law school, Bwari, Abuja - BL Law - 2011 2. University of Abuja, Abuja, FCT - LLB. Law - 2010 3. Bethany Christian Academy, Barkin Ladi, Plateau State - West African Examination Council (WAEC), Certificate of Ordinary Level Examinations and School Leaving Certificate - 2005 4. Napo Private School, Maitama, Abuja - Primary school leaving certificate - 1999', :email => 'dtargd@yahoo.co.uk', :internet_access => 'at home',
   :internet_use => 'every days', :is_urban => true, :name => 'Doose', :phone_number => '+2348065556565',
   :surname => 'Targema-Takema', :work_experience => '', :work_perspective => 'I am excited about the prospect of actually putting a lot of what I learnt in my course of study into actual practice e.g. researching, which is a major skill required in my profession and also which I have developed a passion for. Moreover, I like the prospect of being able to work online from home, which is an opportunity I have been looking for and not been able to find, mostly because of the bans online on my country e.g. not being able to open a pay pal account. I also like the prospect of building a portfolio because most major companies and institutions are looking for employees with experience. I believe I can get some work experience from this and develop my skills even more. Finally, I am excited about the prospect of using my skills to help people all over the world and also actually getting better jobs as time goes by.',
-  :internet_price => 25 )
+  :internet_price => 25 , :password => 'password', :password_confirmation => 'password')
 sp4 = ServicePartner.create(
   :country => Country.find_by_name('Malawi'), :affiliation => Affiliation.find_by_name('online advertisement (facebook)'), :education => Education.find_by_name('tertiary education/university'), :date_of_birth => Date.new(1989,1,1), :city => 'Blantyre',
   :education_background => 'During my early childhood, i got an education in England where my deceased mother was working at the time, so part of my primary school education was done in London. I did my secondary school (four years) at a local mission school in Thyolo (a two hour drive from Blantyre city) where i graduated with an O-level qualification-MSCE (Malawi School Certificate of Education) . I then did my tertiary education at a private institution...Corporate Governance College. I studied Business Administration (certificate) and finished with an Advanced Diploma in Business Management awarded by the Association of Business Executives (ABE) UK. The course is initially meant to be completed in two years, but due to some financial challenges, it took me three years.', :email => 'sajiwaasante@yahoo.com', :internet_access => 'cyber café',
   :internet_use => '5 days per week', :is_urban => true, :name => 'Asante Anne', :phone_number => '+265999612003',
   :surname => 'Sajiwa', :work_experience => 'I have worked for a hotel before, Malawi Sun as a receptionist. I was mainly responsible for bookings and reservations and customer service on a day-to-day basis. I would also work as the cashier for the main restaurant, Aamari at times. It gave me the opportunity of meeting alot of different people with different diverse cultures and communicate with them effectively. From Malawi Sun Hotel, i changed jobs and am now working in the motor industry for Stansfield Motors Limited as the personnel assistant.',
   :work_perspective => 'The Prospect of working with Transfair has taken up my interest because of the flexibility of the work. Where you can work from home or anywhere at an individual\'s own pace. Despite having a job already, which isn\'t demanding and doesn\'t pay so well, i like the idea of making extra money to cater for the responsibilities i have for me and my siblings. I also like the fact that i\'ll be gaining exposure for my talent and skill to the western countries. The idea of having an experience of working on an international platform thrills me.',
-  :internet_price => 1200 )
-ServicePartner.create([
-])
+  :internet_price => 1200 , :password => 'password', :password_confirmation => 'password')
 
 Education.delete_all
 Education.create([
@@ -204,5 +202,3 @@ Employment.create([
   {:service_partner => sp3, :job => job1, :paid => false},
   {:service_partner => sp4,:job => job2, :paid => false},
 ], :without_protection => true)
-
-

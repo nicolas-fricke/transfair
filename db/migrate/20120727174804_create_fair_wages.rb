@@ -2,7 +2,7 @@ class CreateFairWages < ActiveRecord::Migration
   def change
     create_table :fair_wages do |t|
       t.date :date
-      t.decimal :amount
+      t.float :amount
       t.references :country
 
       t.timestamps
