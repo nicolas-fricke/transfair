@@ -20,7 +20,7 @@ class AddServicePartnerFieldsAndClientFieldsToUsers < ActiveRecord::Migration
     add_column :users, :date_of_birth, :date
     add_column :users, :education_field_id, :integer
     add_column :users, :work_field_id, :integer
-    add_column :users, :internet_price, :decimal
+    add_column :users, :internet_price, :float
     add_column :users, :active, :boolean
     add_column :users, :work_perspective, :string
     # Client fields

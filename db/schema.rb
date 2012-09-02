@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901173932) do
+ActiveRecord::Schema.define(:version => 20120902171348) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
 
   create_table "fair_wages", :force => true do |t|
     t.date     "date"
-    t.decimal  "amount",     :precision => 10, :scale => 0
+    t.float    "amount"
     t.integer  "country_id"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "fair_wages", ["country_id"], :name => "index_fair_wages_on_country_id"
@@ -89,9 +89,9 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
     t.boolean  "client_paid"
     t.integer  "rating_client"
     t.text     "rating_text"
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
-    t.decimal  "special_price",               :precision => 10, :scale => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.float    "special_price"
     t.integer  "language_id"
     t.integer  "trancription_information_id"
   end
@@ -146,18 +146,18 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                                 :default => "", :null => false
-    t.string   "encrypted_password",                                    :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                                            :null => false
-    t.datetime "updated_at",                                                            :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "type"
     t.string   "name"
     t.string   "surname"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
     t.date     "date_of_birth"
     t.integer  "education_field_id"
     t.integer  "work_field_id"
-    t.decimal  "internet_price",         :precision => 10, :scale => 0
+    t.float    "internet_price"
     t.boolean  "active"
     t.string   "work_perspective"
     t.string   "company"
