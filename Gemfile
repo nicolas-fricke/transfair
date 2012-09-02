@@ -6,7 +6,11 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Database adapter
-gem 'mysql2'
+#gem 'mysql2'
+
+# Deployment
+gem 'pg', '~> 0.14.1'
+gem 'activerecord-postgresql-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,10 +40,6 @@ group :assets do
   gem 'dropbox-sdk'
   gem 'time_diff'
 end
-
-# for deployment
-
-
 
 gem 'jquery-rails'
 
