@@ -50,35 +50,35 @@ Country.create([
 
 User.delete_all
 User.create([
-  {:email => 'nicolas@fricke.de', :password => 'nicolas'},
-  {:email => 'markus@hinsche.de', :password => 'markus'},
+  {:name => 'Markus', :surname => 'Hinsche', :email => 'nicolas@fricke.de', :password => 'nicolas', :password_confirmation => 'nicolas'},
+  {:name => 'Nicolas', :surname => 'Fricke', :email => 'markus@hinsche.de', :password => 'markus', :password_confirmation => 'markus'},
 ])
 
 Client.create([
   {:company => 'Stuutgart University', :email => 'blatovic@steinbeis-icrm.eu', :name => 'Boris',
    :phone_number => '', :position => 'coordinator course of study "responsible management"', :surname => 'Blatovic',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HBFK', :email => 'fly@hbfk.de', :name => 'Mark',
    :phone_number => '', :position => 'PhD Student', :surname => 'Fly',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HSBK', :email => 'pop@hsbk.de', :name => 'Ann',
    :phone_number => '', :position => 'PhD Student', :surname => 'Pop',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'IQ', :email => 'christopher_nolan@hotmail.com', :name => 'Christopher',
    :phone_number => '', :position => 'intern', :surname => 'Nolan',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'HBFK', :email => 'jerry@hbfk.de', :name => 'Jeff',
    :phone_number => '', :position => 'PhD Student', :surname => 'Jerry',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'project wiki 5', :email => 'pikani.wiki5@gmail.com', :name => 'Frank',
    :phone_number => '', :position => 'journalist', :surname => 'Pikani',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'Radiopodcast', :email => 'adrion.brown@radiopodcast.com', :name => 'Adrion',
    :phone_number => '+491762379800', :position => '', :surname => 'Brown',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
   {:company => 'Löwez Grafikdesign', :email => 'jane@janlowez.com', :name => 'Jane',
    :phone_number => '', :position => 'freelancer', :surname => 'Löwez',
-   :country =>Country.first, :affiliation => Affiliation.first, :password => "password"},
+   :country =>Country.first, :affiliation => Affiliation.first, :password => 'password', :password_confirmation => 'password'},
 ])
 
 sp1 = ServicePartner.create(
@@ -204,5 +204,3 @@ Employment.create([
   {:service_partner => sp3, :job => job1, :paid => false},
   {:service_partner => sp4,:job => job2, :paid => false},
 ], :without_protection => true)
-
-
