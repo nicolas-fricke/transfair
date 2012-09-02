@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901173932) do
+ActiveRecord::Schema.define(:version => 20120902220751) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -30,11 +30,6 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
     t.string   "currency"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "countries_transcription_informations", :id => false, :force => true do |t|
-    t.integer "country_id"
-    t.integer "transcription_information_id"
   end
 
   create_table "educations", :force => true do |t|
@@ -94,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20120901173932) do
     t.decimal  "special_price",               :precision => 10, :scale => 0
     t.integer  "language_id"
     t.integer  "trancription_information_id"
+    t.string   "state"
   end
 
   add_index "jobs", ["client_id"], :name => "index_jobs_on_client_id"

@@ -1,3 +1,5 @@
+require 'state_machine'
+
 class Job < ActiveRecord::Base
   belongs_to :client
   belongs_to :job_type
@@ -41,4 +43,30 @@ class Job < ActiveRecord::Base
       return 'multiple'
     end
   end
+
+  state_machine :initial => :submitted do
+
+    event :accept do
+      transition :submitted => :accepted
+    end
+
+    event :decline do
+      transition :submitted => :declined
+    end
+
+
+    state :submitted do
+
+    end
+
+    state :accepted do
+
+    end
+
+    state :decline do
+
+    end
+
+  end
+
 end
