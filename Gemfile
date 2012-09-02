@@ -15,6 +15,7 @@ gem 'activerecord-postgresql-adapter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+end
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -34,7 +35,7 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'bootstrap-datepicker-rails'
   gem 'bootstrap-timepicker-rails', '~> 0.1.2'
-end
+
   gem 'simple-navigation'
   gem 'simple-navigation-bootstrap'
   gem 'simple_form'
