@@ -1,12 +1,6 @@
 <%= simple_form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <div class="control-group">
-    <%= f.label :deadline_client, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :deadline_client, :class => 'datepicker' %>
-      <i class="icon-calendar" style="margin: -2px 0 0 -26px; pointer-events: none; position: relative;"></i>
-    </div>
-  </div>
+  <%= f.input :deadline_client, :as => :date %>
   <%= f.input :job_type_id, :collection => JobType.all.collect { |p| [ p.name , p.id ] } %>
   <%= f.button :submit %>
 <% end %>
