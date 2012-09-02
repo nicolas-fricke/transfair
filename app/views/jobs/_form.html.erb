@@ -1,6 +1,6 @@
 <%= simple_form_for @job, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :deadline_client, :as => :date %>
+  <%= f.input :deadline_client, :as => :time %>
   <%= f.input :job_type_id, :collection => JobType.all.collect { |p| [ p.name , p.id ] } %>
   <%= f.button :submit %>
 <% end %>
