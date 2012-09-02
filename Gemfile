@@ -34,12 +34,13 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'bootstrap-datepicker-rails'
   gem 'bootstrap-timepicker-rails', '~> 0.1.2'
+end
   gem 'simple-navigation'
   gem 'simple-navigation-bootstrap'
   gem 'simple_form'
   gem 'dropbox-sdk'
   gem 'time_diff'
-end
+
 
 gem 'jquery-rails'
 
