@@ -1,7 +1,7 @@
 login: &login
   adapter: postgresql
   encoding: utf8
-  username: nico
+  username: root
   password:
 #  host: localhost
 #  socket: /var/run/mysqld/mysql.sock
