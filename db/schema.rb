@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(:version => 20120902171348) do
     t.integer  "work_field_id"
     t.float    "internet_price"
     t.boolean  "active"
-    t.string   "work_perspective"
+    t.text     "work_perspective"
     t.string   "company"
     t.string   "position"
   end
