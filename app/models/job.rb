@@ -31,14 +31,4 @@ class Job < ActiveRecord::Base
   #  self.status ||= JobStatus.first
   #end
 
-  def string_service_partners
-    count = service_partners.length
-    if count == 0
-      return 'none'
-    elsif count == 1
-      return service_partners.first.full_name
-    else
-      return 'multiple'
-    end
-  end
 end

@@ -8,13 +8,6 @@
   </h1>
 </div>
 
-<%= form_tag jobs_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Filter name", :full_name => nil %>
-  </p>
-<% end %>
-
 <table class="table table-striped">
   <thead>
     <tr>
@@ -39,10 +32,14 @@
         <% if job.client.nil? %>
           <td><%= '' %></td>
         <% else %>
-          <td><%= job.client.full_name %></td>
+          <td><%= link_to job.client.full_name, client_path(job.client) %></td>
         <% end %>
 
-         <td><%= job.string_service_partners %></td>
+        <td>
+          <% job.service_partners.each do |sp| %>
+            <%= link_to sp.full_name, service_partner_path(sp) %><br/>
+          <%end%>
+        </td>
 
         <% if job.deadline_client.nil? %>
           <td><%= '' %></td>
