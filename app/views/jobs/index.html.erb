@@ -70,7 +70,7 @@
 
         <td><%= job.client_paid %></td>
         <td><%= job.rating_client %></td>
-        <td><%=l job.created_at %></td>
+        <td><%=l job.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_job_path(job), :class => 'btn btn-mini' %>
