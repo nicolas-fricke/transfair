@@ -36,7 +36,7 @@
       <tr>
         <td><%= link_to job.name, job_path(job) %></td>
 
-        <% if job.client == nil %>
+        <% if job.client.nil? %>
           <td><%= '' %></td>
         <% else %>
           <td><%= job.client.full_name %></td>
@@ -44,25 +44,25 @@
 
          <td><%= job.string_service_partners %></td>
 
-        <% if job.deadline_client == nil %>
+        <% if job.deadline_client.nil? %>
           <td><%= '' %></td>
         <% else %>
-          <td><%= job.deadline_client.to_date %></td>
+          <td><%= job.deadline_client.to_date.strftime("%d %b") %></td>
         <% end %>
 
-        <% if job.deadline_intern == nil %>
+        <% if job.deadline_intern.nil? %>
           <td><%= '' %></td>
         <% else %>
-          <td><%= job.deadline_intern.to_date %></td>
+          <td><%= job.deadline_intern.to_date.strftime("%d %b")  %></td>
         <% end %>
 
-        <% if job.job_type == nil %>
+        <% if job.job_type.nil? %>
           <td><%= '' %></td>
         <% else %>
           <td><%= job.job_type.name %></td>
         <% end %>
 
-        <% if job.job_status == nil %>
+        <% if job.job_status.nil? %>
           <td><%= '' %></td>
         <% else %>
           <td><%= job.job_status.name %></td>
